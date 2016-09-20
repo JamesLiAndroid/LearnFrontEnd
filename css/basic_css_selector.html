@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			background-color: cyan;
+		}
+		span {
+			color: red;
+		}
+		p {
+			color: green;
+			font-size: 40px;
+		}
+		#para {
+			color: blue;    
+			text-decoration: underline;/* 添加下划线 */
+		}
+		.classer {
+			color: cyan;
+		}
+		.abc {
+			color: white;
+			text-decoration: underline;
+		}
+
+		.back_black {
+			background-color: black;
+		}
+
+		.big_title {
+			font-size: 60px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>前端与移动开发<span>第一期</span>学院</h1>
+
+	<p>
+		我是一个段落
+	</p>
+	<p id="para">我是一个带着id的段落</p>
+
+	<p>我是下面的段落！</p>
+
+	<h3 class="classer">我是一个h3标题</h3>
+	<h3>我是一个h3标题</h3>
+	<h3 class="classer">我是一个h3标题</h3>
+	<p>我是一个段落</p>
+	<p class="abc classer">我是一个段落</p>
+	<p>我是一个段落</p>
+
+	<h3>我是全新的practice</h3>
+	<p class="abc big_title">我是一个段落</p>
+	<p class="abc back_black">我是一个段落</p>
+	<p class="back_black big_title abc">我是一个段落</p>
+
+</body>
+</html>
+
+<!--
+	基础选择器：标签名称
+	1。标签选择器:选择的是页面上所有这种类型的标签，常用做描述“共性”
+		注意： 
+		1） 所有的标签都可以是选择器
+		2） 无论这个标签藏得多深，一定可以被选择上
+		3） 作用于页面存在的所有标签，而不是一个！
+
+	2.id选择器：#+id属性名称
+	id属性不可以重复!
+	id取名：
+		1) 只能有字母数字下划线
+		2） 必须以字母开头
+		3） 不能和标签同名
+		注意:一个页面不能出现相同的id，即使是不同类型的标签！例如<p id="pp"></p> 和 
+		<div id="pp"></div>
+
+	3.类选择器:.+class属性名称
+		1）class属性可以重复!
+		2）同一个标签可以同时属于多个类，用空格隔开
+		3）使用类应该抽取各个标签的共性构建公共类,不要试图用一个类把一个标签的所有样式描述完！
+		4）每一个类尽可能小，有公共的概念，能够让更多的标签使用！
+	
+
+	PS：对CSS来说，尽可能的使用class，原因就是id是js使用的，也就是说js通过id找到相应的标签，所以在css层面尽量不要用id。也就是说，类上样式，id上行为！
+
+	相对路径和绝对路径：
+	从自己出发，通过../ image/等路径，找到别人，就是相对路径！
+	优点在于，站点不管拷贝到哪里，文件和图片的相对路径关系都是不变的！
+	但是所有的文件必须在同一个服务器上！
+
+	用http://开头的路径，就是绝对路径
+	绝对不允许使用file://开头的内容！
+-->
