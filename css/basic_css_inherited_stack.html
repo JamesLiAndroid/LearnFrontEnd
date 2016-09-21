@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    /* div p {
+        color: red;
+        border: 2px solid blue;
+    } */
+    
+    body {
+        color: red;
+        font-style: italic;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .abc {
+    	color: red;
+    }
+    
+    .cde {
+        color: cyan;
+    }
+   /*  
+   p {
+       color: red;
+   }
+    */
+    .bac {
+        color: blue;
+    }
+   /*  
+   #box1 .hezi2 p {
+       color: red;
+   } */
+    
+    div div #box3 p {
+        color: green;
+    }
+    
+    div.hezi1 div.hezi2 div.hezi3 {
+        color: blue;
+    }
+
+    div div div div div div p{
+    	color: red;
+    }
+
+    .haha {
+    	color: blue;
+    }
+
+    #hezi1 #hezi2 {
+		color: red;
+    }
+
+    #hezi3 {
+		color: cyan;
+    }
+
+   /*  div.box div.box div.box {
+   	color: blue;
+   }
+   
+   
+   div.box div.box div.box p.ppp{
+   	color: orange;
+   }
+   
+   p {
+   	color: green;
+   }
+    */
+
+    </style>
+</head>
+
+<body>
+    <h1>继承性</h1>
+    <div>
+        <p>特性1</p>
+        <p>特性1</p>
+        <p>特性1</p>
+    </div>
+    <div>
+        <div>
+            <div>
+                我是文字
+                <div>
+                    <div>
+                        我是文字
+                        <ul>
+                            <li>
+                                <span>
+									<a href="#">我是文字</a>
+								</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>层叠性</h1>
+    <p class="bac" id="cde">层叠性内容</p>
+    <div class="hezi1" id="box1">
+        <div class="hezi2" id="box2">
+            <div class="hezi3" id="box3">
+                <p>猜猜我的颜色</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                        	<p class="haha">颜色实验！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box" id="hezi1">
+        <div class="box" id="hezi2">
+            <div class="box" id="hezi3">
+                <p class="ppp">猜猜我的颜色</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="abc cde">abc</p>
+    <p class="cde abc">cde</p>
+</body>
+
+</html>
+<!-- 
+	一、继承性：
+	
+	有一些属性，当给自己标签设置的时候，后代都继承上了
+
+	可以继承的属性：
+	color，text-开头的，line-开头的，font-开头的。
+
+	关于文字样式的，都可以继承；
+	所有关于盒子的、定位、布局的属性都不能继承。
+
+	继承是从自己开始，直到最小的元素
+
+	二、层叠性
+
+	就是CSS处理冲突的能力。
+
+	当选择器，选择上了某个元素的时候，需要统计权重。所有的权重计算没有任何兼容问题！
+
+	id的数量，类的数量，标签的数量。
+
+	如果权重一致，以后出现的内容为准！
+
+	如果不能直接选中某个元素，通过继承性影响的话，权重是0；
+
+	如果大家都是0，有一个就近原则：谁描述的近，听谁的
+
+	权重问题总结：
+	1） 先看看有没有选中，如果选中，那么以（id数量，class数量，标签数量）来计算权重，谁大听谁的。
+	如果都一样，以最后出现的为准。
+
+	2）如果没有选中，那么权重是0，此时标签数量不起作用。如果大家都是0，	不要计算标签数量了，也别看谁在下边，
+	只有一个条件能影响：就近原则！
+
+	PS：在使用并集选择器的时候，要拆开计算，不能组合起来计算。
+
+	三、CSS权重计算公式
+
+	STYLE #ID .CLASS ELEMENT
+	1000  100    10     1
+
+	256个class选择器可以干掉1个id选择器
+
+	四、	补充
+
+	<p class="abc cde">abc</p>
+    <p class="cde abc">cde</p>
+
+    ｐ元素的颜色和class类名的顺序无关！只和CSS顺序有关
+
+    .abc {
+    	color: red;
+    }
+    
+    .cde {
+        color: cyan;
+    }
+	颜色自然是cyan，因为写在后边。
+
+ -->

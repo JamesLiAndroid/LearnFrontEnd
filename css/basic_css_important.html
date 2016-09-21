@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+
+	<style type="text/css">
+		p {
+			color: red;
+			font-size: 100px;
+		}
+
+		#para1 {
+			color: blue;
+			font-size: 300px;
+		}
+
+		.spec {
+			color: green;
+			font-size: 50px;
+		}
+		div {
+			color: cyan !important;
+		}
+
+		ul {
+			color: orange;
+		}
+	</style>
+</head>
+<body>
+	<p id="para1" class="spec">文字</p>
+
+	<div>
+		<p>abcde</p>
+		<ul>
+			<li>继承提升外部
+				<p>继承提升！</p>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+<!-- 
+	important属性：
+
+	p {
+			color: red !important;
+		}
+
+		#para1 {
+			color: blue;
+		}
+
+		.spec {
+			color: green;
+		}
+	
+	通过语法
+		k:v !important;
+	给一个属性提升权重！
+
+	强调内容：
+	1） ！important提升的是一个属性，而不是一个选择器。
+	2）	!important无法提升继承的权重，该是0还是0。
+	3） ！important不影响就近原则
+
+	PS：！important在建站的时候不允许使用，因为会让CSS写的很乱
+
+
+ -->

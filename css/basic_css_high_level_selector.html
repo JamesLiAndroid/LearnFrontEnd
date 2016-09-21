@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .div1 p {
+        color: red;
+    }
+
+
+    .div1 .div2 .div4 p {
+    	color: blue;
+    }
+
+    .div2 .div1 p {
+    	color: cyan;l
+    }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <ul>
+            <li>
+                <p>段落</p>
+                <p>段落</p>
+                <p>段落</p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <p>段落</p>
+        <p>段落</p>
+        <p>段落</p>
+    </div>
+
+    <div class="div1">
+    	<div class="div2">
+    		<div class="div3">
+    			<div class="div4">
+    				<p>这个是需要被改变的段落</p>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</body>
+
+</html>
+<!-- 
+	后代选择器：空格表示后代，下面的语句表示.div1的“后代”（而不是儿子）中所有的p, 不管有多少层级
+	
+	.div1 p {
+ 			color: red;
+ 	}
+
+	后代选择器是一种平衡，共性和特性的平衡。需求在于，当要把某一个部分的所有相关元素进样式改变的时候
+
+	后代选择器描述的是祖先结构！
+
+	
+ -->

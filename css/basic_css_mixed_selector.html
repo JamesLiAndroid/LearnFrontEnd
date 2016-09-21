@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+
+		h3.special.zhongyao {   /* 这个写法从IE7开始，IE6不兼容 */
+			color: red;
+		}
+		
+		.special.zhongyao {
+			color: blue;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h3>我是标题</h3>
+	<h3 class="special zhongyao">我是标题</h3>
+	<h3 class="special">我是标题</h3>
+	<p class="special">我是段落</p>
+	<p>我是段落</p>
+
+	<p>我是段落</p>
+</body>
+</html>
+
+<!-- 
+	交集选择器：
+
+	h3.special {
+			color: red;
+		}
+	选择元素时必须满足下面两个条件：1.必须时h3元素 2.类名必须是special
+
+	交集选择器没有空格，div.red和div .red不是一个意思！
+
+	一般以标签名开头
+ -->
