@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box1 {
+			width: 480px;
+			height: 320px;
+			border: 1px solid red;
+			padding: 110px 20px;
+		}
+
+		.box2 {
+			width: 240px;
+			height: 320px;
+			border: 121px solid blue;
+			padding-left: 55px;
+			padding: 9px;
+			margin: 15px;
+		}
+		.box3 {
+			width: 600px;
+			height: 200px;
+			/* padding-top: 10px;
+			padding-left: 16px;
+			padding-right: 20px;
+			padding-bottom: 45px; */
+			padding: 110px 20px 150px;
+			padding-left: 5px;
+			border: 1px solid cyan;
+			background-color: pink;
+		}
+
+		/* 清除padding带来的影响 */
+		h1,h2,h3,h4,h5,h6,div,p,ul,li {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		第一个盒子
+	</div>
+	<div class="box2">
+		第二个盒子fasadfsadfsadfsadfsadffasdsadfsadasdfadfsafsdfsadafsdfsadfsad
+	</div>
+	<div class="box3">
+		文字	文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字文字
+		文字文字文字文字文字文字文字文字文字文字
+
+	</div>
+
+	<ul>
+		<li>
+			文字
+		</li>
+		<li>
+			文字
+		</li>
+		<li>
+			文字
+		</li>
+		<li>
+			文字
+		</li>
+	</ul>
+</body>
+</html>
+
+<!-- 
+	CSS盒模型：
+
+	认识高度和宽度
+	1.计算高度和宽度：
+
+	真实占有宽度 = 左border +左padding + width +　右padding + 右border
+
+	2.padding
+	padding区域是有背景颜色的！background-color填充的是border以内的包含padding部分的颜色，但是不包含border宽度所承担的颜色！
+	padding区域是有方向的，从top，right， bottom， left。
+	四个方向属性分别是：
+
+			padding-top: 10px;
+			padding-left: 16px;
+			padding-right: 20px;
+			padding-bottom: 45px;
+
+
+	综合属性：
+
+	padding: top right bottom left;
+
+	padding: top right bottom;只写三个值，剩下的一个值和right一致！
+	
+	padding:top right; 只写两个值，剩下的left = right，bottom = top
+
+	可以使用小属性层叠大属性：
+	padding: 110px 20px 150px;
+	padding-left: 5px;
+
+	这时候left padding就变成了5px。
+
+	padding-right: 15px;
+	padding: 9px;
+
+	这时候真正的padding-right就变成了9px，padding大属性就层叠掉了小属性！
+
+	一些标签自带padding属性
+
+	/* 清除padding带来的影响 */
+		h1,h2,h3,h4,h5,h6,div,p,ul,li {
+			margin: 0;
+			padding: 0;
+		}
+
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {
+			margin:0;
+			padding:0
+		}
+ -->

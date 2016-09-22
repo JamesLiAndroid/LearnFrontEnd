@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+		div {
+			width: 400px;
+			height: 450px;
+			/* border: 1px solid red; */
+			border-width: 1px 10px;
+			border-style: solid dashed dotted;
+			border-color: red blue cyan blue;
+
+		}
+
+		div.part2 {
+			width: 400px;
+			height: 450px;
+			/* border: 1px solid blue; */
+			border-left: 10px solid blue;
+			border-right: 10px solid blue;
+			border-top: 10px solid blue;
+			border-bottom: 10px solid blue;
+		}
+
+		div.part3 {
+			border: 10px solid red;
+			border-style: solid dashed;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="part1"></div>
+	<div class="part2"></div>
+	<div class="part3"></div>
+</body>
+</html>
+
+<!-- 
+	css border
+
+	border三要素：
+	粗细，线型，颜色
+		border: 1px solid red;
+
+
+	颜色不写默认黑色，另外两个属性不写，无法显示边框
+
+	比较稳定的线型：solid、dashed、dotted。
+
+	属性拆分：
+	1）按照属性来拆，也就是按照三要素
+
+	border: 1px solid red; 等价于：
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: red;
+	
+	如果内部有多个值，按照上右下左的顺序进行排列！
+
+	2）按照方向来拆
+
+	border: 1px solid blue; 等价于
+	
+	border-left: 10px solid blue;
+	border-right: 10px solid blue;
+	border-top: 10px solid blue;
+	border-bottom: 10px solid blue;
+
+	按照方向再拆一层就是再按照属性进行拆分，同1）
+
+	实际操作中，怎么简单怎么用！
+
+ -->

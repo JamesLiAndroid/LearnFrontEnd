@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		h1 {
+			width: 400px;
+			background-color: pink;
+		}
+		span {
+			background-color: pink;
+			width: 400px;
+			/* font-size: 50px; */
+		}
+		span.inner {
+			display: block;
+			width: 200px;
+			height: 55px;
+			background-color: cyan;
+		}
+		div {
+			display: inline;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<h1>块级元素</h1>
+	<h2>块级元素</h2>	
+
+	<span>hhhhhh行内元素</span>
+	<span>lllllll行内元素</span>
+
+	<img src="../html/images/images.jpg" /><img src="../html/images/images.jpg" /><img src="../html/images/images.jpg" />
+	<div>abc</div>
+	<div>cde</div>
+	<div>efg</div>
+
+	<p>sadffffffffffffffff<span>姚明</span>fffffffffffasdfsadfsa</p>
+	
+	<div>
+		<span class="inner">span内部</span>
+		<span class="inner">span内部2</span>
+	</div>
+</body>
+</html>
+
+<!--
+	标准文档流
+
+	1. 空白折叠现象
+		<img src="../html/images/images.jpg" /><img src="../html/images/images.jpg" /><img src="../html/images/images.jpg" />
+	img标签之间没有空隙，必须紧密连接。
+
+	2. 高矮不齐，底边对齐
+	
+	3. 自动换行，一行写不满，换行写
+
+	Web页面的制作，必须遵循从上到下的顺序进行
+
+	一、块级元素和行内元素
+
+	块级元素：霸占一行，不能与其他任何元素并列；可以接受宽高；如果宽高不设置，默认变为父亲的100%.
+	行内元素：与其他行内元素并排；不能设置宽高，默认宽度是文字的宽度。
+
+	HTML元素分为文本级和容器级元素，CSS的分类如下：
+
+	1）所有的文本级标签都是行内元素，除了p，p是个文本级，但是他是个块级元素；
+	2）所有的容器级元素都是块级元素
+
+	二、块级元素和行内元素的计算
+		对设置
+			div {
+				display: inline;
+			}
+	
+
+		这个标签将迅速变为行内元素，此时它和一个span无异！
+
+		1） 此时这个div不能设置高度、宽度
+		2） 此时这个div可以和别的元素并排
+		
+		对标签设置
+			span {
+				display: block;
+			}
+
+
+		这个标签将迅速变为块级元素，此时他和一个div无异！
+		
+		1）此时这个span能够设置宽高
+		２）此时这个span必须霸占一行，别人不能和它并排
+		3）如果不设置宽度，将撑满父亲
+
+	CSS一共有三种手段脱离标准文档流：
+	1）浮动
+	2）绝对定位
+	3）固定定位
+
+
+
+ -->
