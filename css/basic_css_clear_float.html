@@ -68,11 +68,12 @@
     }
 	.getall {
 		background-color: blue;
+        overflow: hidden;
 	}
 	.ppp3 {
 		float: left;
 		width: 100px;
-		height: 100px;
+		height: 20px;
 		background-color: green;
 	}
 
@@ -95,6 +96,12 @@
 	.ci {
 		clear: both;
 	}
+
+    .overflowbad {
+        width: 100px;
+        height: 200px;
+        overflow: hidden;
+    }
     </style>
 </head>
 
@@ -182,6 +189,28 @@
 
     	<div class="ci"></div>
     </div>
+
+    <div class="overflowbad">
+        <p>
+            我的新闻我的信息内容同
+            我的新闻我的信息内容同
+         我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息
+         我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息
+         我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息
+我的新闻我的信息我的新闻我的信息我的新闻我的信息v
+我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息
+         我的新闻我的信息
+我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息
+
+我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息
+
+我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息
+我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息
+         我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息
+我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息
+我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息我的新闻我的信息
+        </p>
+    </div>
 </body>
 
 </html>
@@ -204,7 +233,7 @@
 
 	3.清除浮动的方法3：隔墙法
 	
-	第一种：
+	第一种：外墙法
 	 <div>
         <ul class="boxx">
             <li class="marginget">HTML</li>
@@ -214,7 +243,7 @@
         </ul>
     </div>
 
-	<div class="clearall hio"></div> /* 隔墙内容！ */
+	<div class="clearall hio"></div> /* 隔墙内容！但是这样第一个div还是没有height */
 
     <div>
         <ul class="boxo">
@@ -233,7 +262,7 @@
     	height: 10px;
     }
 
-	第二种：
+	第二种：内墙法
     <div class="getall">
     	<p class="ppp3"></p>
     	<p class="ppp2"></p>
@@ -269,5 +298,25 @@
 	.ci {
 		clear: both;
 	}
+    
+    4.清除浮动的方法4：overflow:hidden;
+    本意就是清楚溢出到盒子外面的文字！
+
+    偏方：
+
+      <div class="getall">
+        <p class="ppp3"></p>
+        <p class="ppp2"></p>
+        <p class="ppp1"></p>
+
+        <div class="ci"></div>
+    </div>
+
+    .getall {
+        background-color: blue;
+        overflow: hidden;
+    }
+
+    为这个div加上overflow: hidden;之后，这个div就能够被浮动的儿子撑出高度了！
 
  -->

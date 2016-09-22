@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.ppp1 {
+			width: 200px;
+			height: 200px;
+			background-color: orange;
+			margin-bottom: 30px;
+
+		}
+
+		.ppp2 {
+			width: 200px;
+			height: 200px;
+			background-color: black;
+			margin-top: 60px;
+		}
+
+		.center_div {
+			width: 200px;
+			height: 300px;
+			background-color: cyan;
+			margin:0 auto;
+
+		}
+
+		div {
+/* 			text-align: center;
+ */		}
+
+		p {
+			/* width: 100px;
+			background-color: orange;
+			margin: 0 auto;
+			text-align: center; */
+		}
+		img {
+			width: 200px;
+		}
+
+		.sendmarigin {
+			width: 300px;
+			height: 300px;
+			background-color: orange;
+			padding-top: 50px;
+			border: 1px solid #000; /* 添加边框后 */
+		}
+
+		.mymargin {
+			width: 100px;
+			height: 100px;
+			/* margin-top: 50px; */
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	 <div class="ppp1"></div>
+	 <div class="ppp2"></div>
+
+
+	 <div class="center_div"></div>
+	 <span><p>哈哈哈哈哈</p></span>
+
+	 <div>
+	 	图片文本
+	 	<img src="../html/images/images.jpg" />
+	 	<p>图片文本</p>
+	 </div>
+
+	 <div class="sendmarigin">
+	 	<p class="mymargin"></p>
+	 </div>
+	
+</body>
+</html>
+
+<!-- 
+	margin:
+
+	1. margin的塌陷现象
+	出现在标准文档流中，竖直方向的margin不叠加，以较大的为准！
+
+	30px塌陷在了50px的中，间距变成了50px。
+
+	只存在竖直方向中，水平方向没有！
+
+	如果不存在标准流，比如盒子都浮动了，两个盒子之间没有塌陷现象！
+
+	2.盒子居中 margin:0 auto;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	等价于：
+	margin:0 auto;
+
+	注意：
+	1）使用margin:0 auto;的盒子，必须有width，有明确的width。
+	2)只有标准流的盒子才能使用margin:0 auto;居中，也就是说，
+	当一个盒子浮动了、绝对定位了、固定定位了，都不能使用margin:0 auto;
+	3)margin:0 auto;应用于居中盒子，并不是在居中文本，文本居中使用
+		text-align:center;
+
+	PS：图片的居中使用的是text-align:center，同样适用的还有表单元素
+
+	3.善于使用父亲的padding，而不是儿子的margin
+
+	当父标签未设置border属性时，对子元素设置margin-top，将引发父元素跟随子元素向下移动。
+
+	margin这个属性，本质上是描述兄弟元素之间的关系，最好不要用这个表达父子之间的距离，所以一定要善于使用父亲的padding而不是儿子的margin
+
+ -->
