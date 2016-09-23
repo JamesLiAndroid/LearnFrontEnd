@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box1 {
+			width: 200px;
+			height: 100px;
+			background-color: red;
+			border: 1px solid cyan;
+		}	
+
+		.box2 {
+			width: 200px;
+			height: 100px;
+			background-color: rgb(255, 0, 0);
+			border: 1px solid cyan;
+		}
+	
+		.box3 {
+			width: 200px;
+			height: 100px;
+			background-color: #f00;
+			border: 1px solid cyan;
+		}
+
+		.box4 {
+			width: 800px;
+			height: 400px; 
+			border: 1px solid cyan;
+			background-image: url('https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png');
+			background-repeat: no-repeat;
+		}
+
+		.box5 {
+			width: 800px;
+			height: 400px; 
+			border: 1px solid cyan;
+			background-image: url('https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png');
+			background-repeat: no-repeat;
+			background-position: right bottom;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+
+	<div class="box4">属性属性属性属性属性属性属性属性属性属性属性属性属性属性属性属性属性属性</div>
+	<div class="box5">属性属性属性属性属性属性属性属性属性属性属性属性属性属性属性属性属性属性</div>
+
+	
+</body>
+</html>
+
+<!-- 
+	background系列属性：
+
+	1. background-color
+	background-color:red; /* 写简单的color名称 */
+	background-color:rgb(255,255,255); /* 使用rgb方式，0~255 */
+	background-color: #ff0000; /* 十六进制方式，每两位对应rgb()中的一个数字，一共三个颜色*/
+
+	16进制简化方式:
+	background-color: #f00;
+
+
+	常用颜色：
+
+	#000 黑
+	#fff 白
+	#f00 红
+	#333 灰
+	#222 深灰
+	#ccc 浅灰
+
+	2. background-image
+ 	
+ 	background-image: url('https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png');
+	url()中可以是相对路径，访问本地文件；也可以时绝对路径，访问互联网资源！
+
+	PS：这样设置之后，padding区域也会有背景图！
+
+	3. background-repeat
+	设置背景图是否重复
+	
+	background-repeat: no-repeat; /* 背景图不重复 */
+	background-repeat: repeat-x; /* 横向重复 */
+	background-repeat: repeat-y; /* 纵向重复 */
+
+	4. background-position
+	设置背景图片的位置
+
+	background-position: left bottom;
+	background-position: right top;
+	background-position: center center;
+	
+	5. background-attachment
+	背景是否固定
+
+	background-attachment: fixed; /* 背景被固定住，不会被滚动条带走！ */
+
+	6. background综合属性
+	
+	background: red url(1.jpg) no-repeat 100px 100px fixed;
+
+	等价于：
+
+	background-color:red;
+	background-image:url(1.jpg);
+	background-repeat:no-repeat;
+	background-position: 100px 100px;
+	background-attachment:fixed;
+ -->

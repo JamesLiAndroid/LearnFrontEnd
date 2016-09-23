@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+
+	<style type="text/css">
+		/* a:link {
+			color: pink;
+		}
+		
+		a:visited {
+			color: red;
+		}
+		
+		a:hover {
+			color: green;
+		}
+		
+		a:active {
+			color: cyan;
+		} */
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.nav {
+			width: 900px;
+			height: 40px;
+			border: 1px solid black;
+			margin: 100px auto;
+		}
+
+		.nav ul {
+			list-style: none; /* 清除列表默认样式 */
+			
+		}
+
+		.nav ul li {
+			float: left;
+			width: 180px;
+			height: 40px;
+			text-decoration: none;
+			text-align: center;
+			line-height: 40px;
+		}
+
+		.nav ul li a {
+			display: block;
+			width: 180px;
+			height: 40px;
+		}
+
+		.nav ul li a {
+			text-decoration: none;
+			background-color: purple;
+			color: white;
+		}
+
+		.nav ul li a:hover,.nav ul li a:active {
+			background-color: cyan;
+		}
+
+		 
+		/* *{
+			margin: 0;
+			padding: 0;
+		}
+		.nav{
+			width: 900px;
+			height: 50px;
+			border: 1px solid red;
+			margin: 100px auto;
+		}
+		.nav ul{
+			
+			list-style: none;
+		}
+		.nav ul li{
+			float: left;
+			width: 180px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+		}
+		.nav ul li a{
+			display: block;
+			width: 180px;
+			height: 50px;
+		}
+		.nav ul li a:link , .nav ul li a:visited{
+			text-decoration: none;
+			background-color: purple;
+			color:white;
+		}
+		.nav ul li a:hover{
+			background-color: orange;
+		} */
+	
+
+	</style>
+</head>
+<body>
+
+	<!-- <a href="#" target="www.baidu.com">前往百度！</a>
+	<a href="#" target="www.goudu.com">前往狗度！</a> -->
+
+	<div class="nav">
+		<ul>
+			<li><a href="#">超链接优化</a></li>
+			<li><a href="#">超链接优化</a></li>
+			<li><a href="#">超链接优化</a></li>
+			<li><a href="#">超链接优化</a></li>
+			<li><a href="#">超链接优化</a></li>
+		</ul>
+
+	</div>
+	
+</body>
+</html>
+
+<!-- 
+	超链接的美化
+
+	伪类：同一个标签，根据用户状态不同，有不同的样式。
+	伪类用“:”表示
+
+	a有四种伪类:
+
+	a:link { /* 用户没有点击过链接的样式 */
+		color: pink;
+	}
+
+	a:visited { /* 用户访问过了这个链接的样式 */
+		color: red;
+	}
+
+	a:hover { /* 用户悬停的时候链接的样式 */
+		color: green;
+	}
+
+	a:active { /* 用户用鼠标点击这个链接但是不松手时的样式 */
+		color: cyan;
+	}
+
+	这四种状态，在CSS中，必须按照上述描述的固定的顺序写，如果不按照顺序，那么将失效。
+	也可以省略:link和:visited的伪类去编写！
+
+	PS：简单记忆，爱恨准则！
+
+	love hate
+	l v	 ha
+
+	PS：所有的a不继承text、font这些东西，因为a有一个伪类的权重！
+
+	番外：ul/li去掉小圆点的CSS操作：
+	list-style: none;
+
+
+
+ -->
