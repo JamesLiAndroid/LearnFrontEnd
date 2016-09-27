@@ -221,3 +221,129 @@ s,i,em{font-style:normal;text-decoration:none;}
 	left: 3px;
 	top: 5px;
 }
+
+.topbanner {
+	position: relative;
+	width: 100%;
+	height: 80px;
+	margin: 0 auto;
+	background-color: #f02616;
+}
+
+.w {
+	position: relative;
+	margin: 0 auto;
+}
+
+.close-banner {
+	position: absolute;
+	right: 1px;
+	display: block;
+	top: 5px;
+	width: 19px;
+	height: 19px;
+	background: url(../images/close.png) no-repeat 0 0;
+}
+
+.logo {
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	width: 362px;
+	height: 60px;
+	padding: 20px 0;
+	z-index: 12;
+}
+
+.logo .sub-logo {
+	display: block;
+	width: 270px;
+	height: 60px;
+	text-indent: -20000px; /* // 将段落第一行进行缩进。如果使用负值，那么首行会被缩进到左边。 */
+	background: url(../images/logo.png) no-repeat 0 0;
+	
+}
+
+.w .search {
+	position: absolute;
+	top: 0;
+	left: 362px;
+	bottom: 0;
+	right: 0;
+	width: 538px;
+	height: 75px;
+	padding-top: 25px;
+}
+
+.search-form input {
+	width: 432px;
+	height: 32px;
+	border: 2px solid #b61d1d;
+	padding-left: 6px;
+	float: left;
+	color: #666;
+	font: 14px/32px "microsoft yahei";
+}
+
+.search-form button {
+	width: 80px;
+	height: 36px;
+	float: left;
+	background-color: #b61d1d;
+	color: white;
+	font: 16px/36px "microsoft yahei";
+	cursor:pointer;
+
+}/* 
+position: absolute;
+	top: 25px; 
+
+鼠标样式：
+Cursor:pointer; // 鼠标变成小手
+Cursor:default; // 小白
+Cursor:move; // 移动
+Cursor:text; // 文本输入
+
+CSS编写思路：
+给定一个盒子：：宽度高度 背景边框 位置
+
+	*/
+.w .buy-car {
+	width: 139px;
+	height: 34px;
+	padding-left: 43px;
+	float: right;
+	margin: 25px 65px 0 0;
+	border: 1px solid #DFDFDF;
+	line-height: 34px;
+	position: relative;
+}
+
+.icon1 {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	width: 16px;
+	height: 13px;
+	background: url(../images/jd2015img.png) no-repeat -1px -59px;
+}
+
+.icon2 {
+	font: 400 13px/13px simsun;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+}
+
+.icon3 {
+	position: absolute;
+	width: 16px;
+	height: 14px;
+	background-color: #c81623;
+	line-height: 14px;
+	text-align: center;
+	color: #fff;
+	top: -4px;
+	border-radius: 8px;
+	/* border-radius: 8px;圆角矩形 */
+}
