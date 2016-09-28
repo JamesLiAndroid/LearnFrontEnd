@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="prev" href="#" />
+    <style type="text/css">
+    .my-progress {
+        -webkit-appearance: none;
+    }
+    
+    .my-progress::-webkit-progress-bar {
+        background-color: #f50;
+    }
+    
+    .content::after {
+        content: 'bbbbbb';
+        color: red;
+    }
+    </style>
+</head>
+<!-- SublimeServer：使编写的文件以http方式打开，不再以file方式打开！ -->
+
+<body>
+    <!-- 数据列表的呈现必须要通过一个载体
+			了解即可，基本不用！
+	 -->
+    <input type="text" list="input_data" />
+    <datalist id="input_data">
+        <option value="laoma"></option>
+        <!-- 选项一定要卸载value属性中 -->
+        <option value="lisi"></option>
+    </datalist>
+    <!-- 进度条 -->
+    <progress class="my-progress" value="10" max="100"></progress>
+    <div class="content">aaaaaa</div>
+    <!-- meter少有浏览器支持 -->
+    <meter></meter>
+    <!-- 通过链接关系声明连入的链接和当前文档之间的关系 -->
+    <a href="www.baidu.com" rel="prev"></a>
+    <a href="www.baidu.com"></a>
+    <a href="www.baidu.com"></a>
+    <a href="www.baidu.com"></a>
+    <a href="www.baidu.com"></a>
+    <label>
+        请输入：
+        <input type="text" name="abc" />
+    </label>
+    <ul>
+        <li>张三1号</li>
+        <li>张三2号</li>
+        <li>张三3号</li>
+        <li>张三4号</li>
+        <li>张三5号</li>
+        <li>张三6号</li>
+        <li>张三7号</li>
+        <li>张三8号</li>
+        <li>张三9号</li>
+        <li>张三10号</li>
+    </ul>
+    <ul id="list">
+    	<!-- <li data-age="18">zhangsan1</li> -->
+    </ul>
+    <div id="info"></div>
+    <script type="text/javascript">
+    // 告诉浏览器这个是一个新标签， html5shiv.js 通过这个脚本重新创建了标签，消除兼容性问题！
+    var data = {
+        01: {
+            name: "张三1",
+            age: 18
+        },
+        02: {
+            name: "张三2",
+            age: 19
+        },
+        03: {
+            name: "张三34",
+            age: 18
+        }
+    };
+    // jQuery操作一定要做变量本地化
+    var list = document.getElementById('list');
+
+    for (var id in data) {
+    	var item = data[id];
+    	var liElement = document.createElement('li');
+    	liElement.appendChild(document.createTextNode(item.name));
+    	// 自定义data-*属性
+    	// 通过DOM存储与DOM对象强相关的数据
+    	liElement.setAttribute('data-age', item.age);
+    	liElement.setAttribute('data-id', item.id);
+    	list.appendChild(liElement); // 变量本地化
+    	// 此处将元素添加到界面上
+    	liElement.addEventListener('click', function(){
+    		//alert(this.innerHTML);
+    		// this是当前点击的元素	
+    		// alert(this.getAttribute('data-age'));
+    		console.log(this.dataset['age']);
+    	}); // 注册多个事件到同一个元素
+    	// liElement.onClick="";  // 只能设置一次
+    }
+    </script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-/* 基本样式 */
+ /* 基本样式 */
 @charset "UTF-8";
 /*css 初始化 */
 html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
@@ -71,7 +71,7 @@ s,i,em{font-style:normal;text-decoration:none;}
 	width: 14px;
 }
 
-.dt, .shortcut .fore{
+.shortcut.dt, .shortcut .fore{
 	padding: 0 20px 0 10px;
 	position: relative;
 }
@@ -256,18 +256,32 @@ CSS编写思路：
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
+	border-bottom: 2px solid #b1191a;
 }
 
 .dropdown {
-	width: 211px;
+	width: 220px;
 	height: 45px;	
 	float: left;
-	background-color: #c81623;
+	background-color: red;
+	position: relative;
+	z-index: 10;
+/* 	overflow: hidden;
+ */
 }
 
 .dropdown .dt {
 	height: 44px;
 	background-color: pink;
+}
+
+.dropdown .dt a {
+	display: block;
+	height: 44px;
+	font: 400 15px/44px "microsoft yahei"; 
+	color: white;
+	background-color: #b1191a;
+	padding-left: 10px;
 }
 
 .dropdown .dd {
@@ -278,8 +292,24 @@ CSS编写思路：
 .navitems {
 	width: 688px;
 	height: 45px;
-	background-color: pink;
 	float: left;
+}
+
+.navitems li.new {
+    background: url(../images/new.jpg) no-repeat right top;
+}
+
+.navitems li a {
+	float: left;
+	font: 400 16px/44px "microsoft yahei"; 
+	color: #333333;
+	padding: 0 20px;
+	display: block;
+}
+
+.navitems li a:hover {
+	color: #c81623; 
+	text-decoration: none;
 }
 
 .bike {

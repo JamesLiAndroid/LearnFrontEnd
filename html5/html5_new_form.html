@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>新的表单类型，只在移动端使用</title>
+</head>
+<body>
+
+	<form action="#" method="">
+		<input type="text" />
+		<input type="image" src="../html/images/images.jpg" name="" />
+		<input type="submit" name="" />
+		<!-- 表单类型： file, text, password, radio, checkbox, button, submit, reset, selected, button, image -->
+
+		<!-- html5添加 -->
+		<input type="date" name=""  /> <!-- 兼容性不好 -->
+		<input type="time" name="" />
+		<input type="color" name="" />
+		<input type="range" name="" min="0" max="100" step="20" />
+		<input type="email" name="" required/>
+		<input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{4}.*?$"> <!-- tel本身并不具备校验功能 -->
+
+		<!-- 虚拟键盘适配，限移动端 -->
+		<input type="text" />
+		<input type="number" />
+		<input type="email" />
+		<input type="tel" />
+		<input type="rul" />
+	</form>
+</body>
+</html>
