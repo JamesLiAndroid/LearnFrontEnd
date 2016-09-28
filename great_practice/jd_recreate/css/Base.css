@@ -250,7 +250,54 @@ CSS编写思路：
 	margin-right: 10px;
 }
 
-/* 页面底部的服务板块的编写 */
+/* nav部分 */
+.jd-nav {
+	height: 45px;
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.dropdown {
+	width: 211px;
+	height: 45px;	
+	float: left;
+	background-color: #c81623;
+}
+
+.dropdown .dt {
+	height: 44px;
+	background-color: pink;
+}
+
+.dropdown .dd {
+	height: 465px;
+	background-color: #c81623;
+}
+
+.navitems {
+	width: 688px;
+	height: 45px;
+	background-color: pink;
+	float: left;
+}
+
+.bike {
+	width: 140px;
+	height: 45px;
+	float: right;
+	background: url(../images/bike.jpg) no-repeat;
+}
+
+.bike a {
+	display: block;
+	height: 44px;
+}
+
+
+
+
+/* 头部分end页面底部的服务板块的编写 */
 .slogan {
 	height: 52px;
 	padding: 20px 0;
