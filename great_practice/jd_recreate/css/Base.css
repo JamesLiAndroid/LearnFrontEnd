@@ -294,7 +294,8 @@ s,i,em{font-style:normal;text-decoration:none;}
 	font: 16px/36px "microsoft yahei";
 	cursor:pointer;
 
-}/* 
+}
+/* 
 position: absolute;
 	top: 25px; 
 
@@ -307,9 +308,9 @@ Cursor:text; // 文本输入
 CSS编写思路：
 给定一个盒子：：宽度高度 背景边框 位置
 
-	*/
+*/
 .w .buy-car {
-	width: 139px;
+	width: 100px;
 	height: 34px;
 	padding-left: 43px;
 	float: right;
@@ -344,6 +345,16 @@ CSS编写思路：
 	text-align: center;
 	color: #fff;
 	top: -4px;
-	border-radius: 8px;
-	/* border-radius: 8px;圆角矩形 */
+	border-radius: 7px 7px 7px 0;
+	/* border-radius: 8px;设置四个角的圆角矩形 */
+}
+
+.hotwords {
+	width: 522px;
+	padding: 7px 0;
+	float: left;
+}
+
+.hotwords a {
+	margin-right: 10px;
 }
