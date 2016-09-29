@@ -324,6 +324,27 @@ CSS编写思路：
 	height: 44px;
 }
 
+.dropdown .dd .items{
+	height: 30px;
+	line-height: 30px;
+	border-left: 1px solid #b1191a;
+	padding-left: 10px;
+	color: #fff;
+	font-size: 15px;
+	font-family: "微软雅黑";
+	position: relative;
+}
+
+.dropdown .dd .items h3 {
+	float: left;
+}
+
+.dropdown .dd .items span {
+	position: absolute;
+	right: 10px;
+	font-weight: 600;
+	font-family: "宋体";
+}
 
 
 

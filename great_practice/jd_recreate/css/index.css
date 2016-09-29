@@ -1,1 +1,153 @@
+@charset "UTF-8";
 /* 首页CSS样式 */
+.banner604 {
+	position: relative;
+}
+.banner604 a {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	width: 100%;
+	height: 604px;	
+	background: url(../images/banner.png) no-repeat top center;
+}
+
+.main {
+	height: 800px;
+	position: relative;
+}
+
+.slider {
+	background-color: pink;
+	width: 720px;
+	height: 450px;
+	margin-left: 230px;
+	margin-top: 12px;
+	float: left;
+	position: relative;
+}
+
+.circle {
+	position: absolute;
+	bottom: 8px;
+	left: 50%;
+	margin-left: -66px;
+}
+
+.circle li {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%; /* 设置圆形 */
+	float: left;
+	background-color: #3e3e3e;
+	color: #fff;
+	text-align: center;
+	line-height: 18px;
+	margin: 0 2px;
+	cursor: pointer;
+}
+
+.circle li.current {
+	background-color: #B61B1F;
+}
+
+.arrow-l, .arrow-r {
+	position: absolute;
+	width: 25px;
+	height: 62px;
+	line-height: 62px;
+	top: 50%;
+	margin-top: -31px;
+	background: rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font: 500 18px/62px "宋体";
+	text-align: center;
+}
+
+.arrow-l {
+	left: 0;
+}
+
+.arrow-r {
+	right: -10px;
+}
+
+.arrow-l:hover, .arrow-r:hover {
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	/* 这里设置color: #fff;，排除rgba的影响 */
+}
+
+.news {
+	width: 248px;
+	height: 450px;
+	float: right;
+	border: 1px solid #ccc;
+	margin-top: 12px;	
+}
+
+.jd-news {
+	height: 200px;
+	border-bottom: 1px dashed #efefef;
+}
+
+.jd-news .dt, .life-service .dt {
+	height: 35px;
+	line-height: 35px;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.jd-news .dt h3, .life-service .dt h3 {
+	float: left;
+	font: 14px/35px "microsoft yahei";
+	color: #666;
+	padding-left: 15px;
+
+}
+
+.jd-news .dt a {
+	float: right;
+	font: 13px/35px "宋体";
+	margin-right: 10px;
+}
+
+.jd-news .dd ul {
+	padding: 8px 0 0 15px;
+}
+
+.jd-news .dd li {
+	line-height: 22px;
+}
+
+.jd-news .dd li span{
+	font-weight: 700;
+	margin-right: 5px;
+}
+
+.life-service {
+	width: 248px;
+	height: 252px;
+	overflow: hidden;
+	border-top: 1px dashed #E4E4E4;
+
+}
+.life-service ul {
+	width: auto;
+}
+
+.life-service .dd {
+	border-top: 1px dotted #E4E4E4;
+	overflow: hidden;
+	height: 251px;
+}
+
+.life-service .dd li{
+	width: 61px;
+	height: 71px;
+	border-top: 1px dotted #E4E4E4;
+	border: 1px solid #E4E4E4;
+	float: left;
+	margin: -1px 0 0 -1px;
+}
+
