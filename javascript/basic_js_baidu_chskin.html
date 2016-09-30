@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>仿百度换肤</title>
+
+	<style type="text/css">
+		
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		body {
+			background: url(../great_practice/jd_recreate/images/logo.png) top center;
+		}
+
+		.skin {
+			height: 200px;
+			line-height: 200px;
+			background: rgba(255, 255, 255, 3.0);
+			text-align: center;
+			padding-top: 25px;
+		}
+		
+		.skin img{
+			cursor: pointer;
+		}
+	</style>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var skin1 = document.getElementById("skin1");
+			var skin2 = document.getElementById("skin2");
+			var skin3 = document.getElementById("skin3");
+
+			skin1.onclick = function() {
+				document.body.style.backgroundImage = "url(../great_practice/jd_recreate/images/slogen1.png)";
+			};
+			skin2.onclick = function() {
+				document.body.style.backgroundImage = "url(../great_practice/jd_recreate/images/slogen2.png)";
+			};
+			skin3.onclick = function() {
+				document.body.style.backgroundImage = "url(../great_practice/jd_recreate/images/slogen3.png)";
+			};
+
+		}
+	</script>
+</head>
+<body>
+
+	<div id="skin">
+		<img src="../great_practice/jd_recreate/images/slogen1.png" alt="皮肤1" id="skin1" width="200" />
+		<img src="../great_practice/jd_recreate/images/slogen2.png" alt="皮肤2" id="skin2"  width="200"/>
+		<img src="../great_practice/jd_recreate/images/slogen3.png" alt="皮肤3" id="skin3"  width="200"/>
+		
+	</div>
+
+</body>
+</html>

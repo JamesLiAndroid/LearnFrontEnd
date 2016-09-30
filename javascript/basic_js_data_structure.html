@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>js数据类型</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	window.onload = function() {
+		var abc = 10;
+		console.log(typeof abc);
+		console.log(typeof String(abc));
+		var cde = "10";
+		console.log(cde);
+		console.log(typeof !!cde);
+		var def = Boolean(abc);
+		console.log(def);
+
+	};
+</script>
+</body>
+</html>
+
+<!--  js数据类型
+	
+	字符型 数值型  布尔（boolean） null undefined
+
+	1.向字符型数据的转换
+	1) "" 2) String()
+	
+	2.向布尔类型的转换
+	1) !!  2) Boolean()
+
+	false, undefined, null, 0, " " 为false；
+	true, 1， “somestring”, [Obejct] 为true。
+
+	3.向数值型的转换
+	1) +,-,*,/ 2) Number() 3)parseInt() parseFloat();
+
+	parseInt(值, 进制); NaN - not a number
+	进制值范围：2～36；
+
+ -->

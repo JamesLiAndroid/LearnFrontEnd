@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>js函数</title>
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+			margin-top: 15px;
+			background-color: purple;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+
+	<button onclick="fn("demo1");">显示第一个盒子</button>
+	<button onclick="fn("demo2");">显示第2个盒子</button>
+	<button onclick="fn("demo3");">显示第3个盒子</button>
+	<button onclick="fn("demo4");">显示第4个盒子</button>
+	<div id="demo1"></div>
+	<div id="demo2"></div>
+	<div id="demo3"></div>
+	<div id="demo4"></div>
+	
+	<script type="text/javascript">
+		
+		/* 函数的三种声明方式!
+			最后一种最不常用，不保留
+		 */
+		// var  num = 10 ;
+		// (function key() {
+		// 	alert(";");
+		// })(); // 定义函数并执行
+		
+		var  num = 10 ;
+		function key() {
+			alert(";");
+		};
+		// 函数不调用，不会自己执行
+
+		//key();
+
+		// 直接量声明 
+		var fun1 = function() {
+			alert("直接量声明!");
+		};
+
+		//fun1();
+		
+		var func2 = new Function("var a = 1;alert(a);");
+		//func2();
+
+		/* js变量提升 */
+
+		// 1 待解释
+		// func3();
+		// console.log(c);
+		// console.log(b);
+		// console.log(a);
+		
+		// function func3() {
+		// 	var a=b=c=9;
+		// 	console.log(a);
+		// 	console.log(b);
+		// 	console.log(c);
+		// }
+		// var A = B = C = 3; //A is local variable while B & C are global variables;
+		// var A = 3 , B = 3, C = 3;// A B C are local variables;
+	
+	
+		//2 
+		var num = 10;
+		//fun4();
+		function fun4() {
+			console.log(num);
+			var num = 20;
+		}
+
+		// 相当于：
+		// function fun4() {
+		// 	var num;
+		// 	console.log(num);
+		// 	num = 20;
+		// }
+
+		// 在函数体内部，声明变量，会把该声明提升到函数体的最顶端，只提升变量声明，不赋值！
+
+
+		/* 检测参数个数匹配 */
+		function slum(a, b) {
+			console.log(slum.length); // 获取函数形参的个数
+			console.log(arguments.length); // 获取函数传入内容的个数
+			return a+b;
+		}
+
+		//console.log(slum(1)); // 未匹配，出现NaN
+		//console.log(slum(1,3)); // 正常匹配
+		//console.log(slum(3,5,6)); // 匹配，取前两个值，第三个值废弃
+		
+		/* 函数传参显示盒子 */
+		function fn(obj) {
+			var elementobj = obj.getElementById(obj);
+			elementobj.style.display = "block";
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div id="local"></div>
+    <img src="../html/images/images.jpg" alt="" id="img-get" />
+    <button id="btn">
+        修改宽度
+    </button>
+    <button id="close">
+        消失
+    </button>
+    <script type="text/javascript">
+    /* 常用的js调试语句  */
+    window.alert("你好！"); /** alert提示框，window对象可以省略*/
+
+    console.log("弹出了alert"); /** console输出,普通控制台消息*/
+    console.warn("warning！弹出了alert"); /** console输出,控制台警示*/
+    console.error("错误"); /** console输出,错误消息*/
+
+    document.write("奥巴马傻逼！"); /** 直接将文本写到页面中显示，document文档对象，不能省略*/
+
+    /* 动态修改div的样式 */
+    var divElement = document.getElementById("local");
+
+    divElement.style.backgroundColor = "#444";
+    divElement.style.width = "200px";
+    divElement.style.height = "200px";
+
+    /* 变量的作用域！ */
+    var num = 20;
+
+    function fn() {
+        console.log(num);
+        var result = 25;
+    }
+
+    /*fn();*/
+    /*console.log(result);*/
+
+    /* 变量的作用域中，
+    全局变量：
+    	1.最外层声明
+    	2.函数内层声明，但是没有声明var的变量,也叫隐式的环境变量
+
+    局部变量：
+    	在函数体内声明的变量，有var进行修饰
+
+     */
+
+    /*
+    事件三要素：事件源，事件，事件处理程序
+
+    事件源.事件 = function() {事件处理函数 }
+
+     */
+    var btn = document.getElementById("btn");
+    btn.onclick = function() {
+        divElement.style.width = "20px";
+    };
+
+    var close = document.getElementById("close");
+    close.onclick = function() {
+    	/*divElement.style.display = "none";*/
+    	divElement.style.visibility = "hidden";
+    	
+    };
+
+    /**
+     * 隐藏样式：
+
+       display:none; 隐藏不占用位置       display:block; 显示
+       visibility:hidden; 隐藏占用位置   visibility:visible; 显示
+       overflow:hidden; 隐藏超出的部分
+     */
+   	var img = document.getElementById("img-get");
+   	img.onmouseover = function() {
+   		img.src = "../html/images/place_holder.jpg";
+   	};
+   	img.onmouseout = function() {
+   		img.src = "../html/images/images.jpg";
+   	}
+
+   	/*  入口函数：
+   		当文本和样式加载完毕之后！
+   	*/
+   	window.onload = function() {
+   		alert("入口函数！");
+   	};
+    </script>
+</body>
+
+</html>
