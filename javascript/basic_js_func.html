@@ -93,6 +93,7 @@
 			console.log(slum.length); // 获取函数形参的个数
 			console.log(arguments.length); // 获取函数传入内容的个数
 			return a+b;
+			console.log("这句话不会显示在控制台");
 		}
 
 		//console.log(slum(1)); // 未匹配，出现NaN
@@ -104,6 +105,12 @@
 			var elementobj = obj.getElementById(obj);
 			elementobj.style.display = "block";
 		}
+
+		var lkj = 1;
+		var jkl = 2;
+		//console.log(lkj++);
+		//console.warn(++lkj);
+		console.log((jkl++)+(lkj++));
 	</script>
 	
 </body>

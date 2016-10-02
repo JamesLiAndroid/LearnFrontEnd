@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		#box {
+			height: 70px;
+			width: 360px;
+			padding-top: 360px;
+			border: 1px solid #ccc;
+			margin: 100px auto;
+			background: url(../great_practice/jd_recreate/images/slogen1.png) no-repeat center center;
+		}
+
+		#box ul {
+			list-style: none;
+			overflow: hidden;
+			border-top: 1px solid #ccc;
+		}
+
+		#box li {
+			float: left;
+			padding: 1px 1px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<ul class="img_list">
+			<li id="li01"><img src="../great_practice/jd_recreate/images/slogen1.png" alt="" width="70" height="70" /></li>
+			<li id="li02"><img src="../great_practice/jd_recreate/images/slogen2.png" alt="" width="70" height="70"/></li>
+			<li id="li03"><img src="../great_practice/jd_recreate/images/slogen3.png" alt="" width="70" height="70"/></li>
+			<li id="li04"><img src="../great_practice/jd_recreate/images/slogen4.png" alt="" width="70" height="70"/></li>
+			<li id="li05"><img src="../great_practice/jd_recreate/images/slogen1.png" alt=""width="70" height="70"/></li>
+
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			function $(id) {
+				return document.getElementById(id);
+			}
+			function fnChange(id, imgUrl) {
+				$(id).onmouseover = function() {
+					$('box').style.backgroundImage = "url(" + imgUrl + ")";
+				};
+			}
+
+			fnChange("li01", "../great_practice/jd_recreate/images/slogen1.png");	
+			fnChange("li02", "../great_practice/jd_recreate/images/slogen2.png");	
+			fnChange("li03", "../great_practice/jd_recreate/images/slogen3.png");	
+			fnChange("li04", "../great_practice/jd_recreate/images/slogen4.png");
+			fnChange("li05", "../great_practice/jd_recreate/images/slogen1.png");	
+		};
+	</script>
+
+</body>
+</html>

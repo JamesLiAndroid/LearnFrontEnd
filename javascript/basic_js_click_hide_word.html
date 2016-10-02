@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>点击隐藏文字</title>
+
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		button, input {
+			border: 0 none;
+			padding: 0;
+		}
+
+		.search {
+			width: 258px;
+			height: 40px;
+			margin: 100px auto;
+			background-color: pink;
+		}
+
+		.search input {
+			width: 208px;
+			height: 40px;
+			background: url(./images/left.jpg) no-repeat;
+			padding-left: 8px;
+			color: #ccc;
+			float: left;
+		}
+
+		.search button {
+			height: 40px;
+			width: 42px;
+			background: url(images/right.jpg) no-repeat;
+			float: right;
+			cursor: pointer;
+		}
+		.wrong {
+			cursor: help;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="search">
+		<input type="text" name="searcher" id="txt" value="请输入。。。" />
+		<button></button>
+	</div>
+
+	<div>
+		自动获得焦点:
+		<input type="text" name="自动获得焦点" id="test" />
+	</div>
+
+	<div>
+		鼠标经过获得焦点:
+		<input type="text" name="鼠标经过获得焦点" id="over" />
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			function $(id) {
+				return document.getElementById(id);
+			} 
+
+			// 自动获得焦点的方法
+			$('test').focus();
+
+			// 鼠标经过获取焦点
+			$('over').onmouseover = function(){
+				this.select(); // 选择功能
+			};
+
+			$('txt').onfocus = function() {
+				//alert('得到焦点!');
+				// 只有用户没有输入和用户第一次使用的时候
+				//$('txt').value = '';
+				if($('txt').value == "请输入。。。") {
+					$('txt').value = '';
+					txt.style.color = '#333';
+				}
+			};
+
+			$('txt').onblur = function() {
+				//alert('失去焦点');
+				// input值为空的时候再还原
+				if($('txt').value == "") {
+					this.value = '请输入。。。';
+					this.style.color = '#ccc';
+					$('txt').className = "wrong"; // 为它赋予定义的新的css类
+				}
+			};
+
+		};
+	</script>
+</body>
+</html>
+
+<!-- 
+	获得焦点 失去焦点 事件
+
+	获得焦点： onfocus
+	失去焦点： onblur
+
+
+	this - 自己的，指本身的标签，主要指事件的调用者
+	className - 类名，手动为标签添加已定义的的css样式
+	innerHTML - 更换盒子内容，文字标签都会进行更换
+
+	表单自动获得焦点：
+
+	txt.focus();
+
+	鼠标经过获取焦点:
+	// 鼠标经过获取焦点
+	$('over').onmouseover = function(){
+		this.select(); // 选择功能
+	};
+ -->
