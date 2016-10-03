@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+	<style type="text/css">
+		body {
+
+		}
+	</style>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var sele = document.getElementById('sele');
+			sele.onchange = function() {
+				alert(this.value);
+				// 通过switch来进行切换
+			}
+		};
+	</script>
+</head>
+<body>
+	<select name="" id="sele">
+		<option value="1">叫春</option>
+		<option value="2">探春</option>
+		<option value="3">迎春</option>
+		<option value="4">惜春</option>
+		<option value="5">干春</option>
+	</select>
+</body>
+</html>

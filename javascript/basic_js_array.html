@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组操作</title>
+
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		
+		window.onload = function() {
+			var arr = [2,3,4];
+			var length = arr.push(7); // 向数组末尾进行追加元素，返回值为新数组的长度
+			console.log(length);
+			console.log(arr);
+
+			var len = arr.unshift(9); // 向数组开头添加元素，返回值为新数组的长度
+			console.log(len);
+			console.log(arr);
+
+			var value = arr.pop(); // 移除数组的最后一个元素，返回值为移除的元素
+			console.log(value);
+			console.log(arr);
+
+			var val = arr.shift(); // 移除数组的第一个元素，返回值为第一个元素的值
+			console.log(val);
+			console.log(arr);
+
+			var arrConnect = [5,6,7];
+			var newArr = arr.concat(arrConnect); // 连接数组，不改变现有数组，仅仅返回被链接数组的副本
+			console.log(newArr);
+
+			var txt = ["aa","bb","xcc"];
+			console.log(txt.join("*")); // 将数组按照指定的操作符转换为字符串，但不改变原数组
+			console.log(txt);
+
+			var stringGet = "abc/dev/deg/tgf/dde";
+			var stringArr = stringGet.split("/"); // 将字符串分割为数组，注意分隔符前后保持一致
+			console.log(stringArr);
+			console.log(stringGet);
+
+		};
+
+	</script>	
+</body>
+</html>

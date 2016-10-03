@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>星座运势</title>
+
+	<style type="text/css">
+		.box {
+			width: 350px;
+			height: 250px;
+			border: 1px solid #ccc;
+			margin: 100px auto;
+		}
+
+		.dt {
+			color: #036;
+			padding-left: 10px;
+			line-height: 35px;
+			font-weight: 700;
+		}
+
+		.dd {
+			padding: 10px;
+		}
+
+		.dd-t {
+			overflow: hidden;
+		}
+
+		.icon {
+			width: 50px;
+			height: 50px;
+			background: url(./images/astroIcon.png) no-repeat;
+			float: left;
+		}
+
+		.yunshi {
+			width: 80px;
+			height: 13px;
+			padding-top: 1px;
+			display: inline-block;
+			background: url(./images/yunshi.png) no-repeat left top;
+			position: relative;
+		}
+
+		.star {
+			width: 64px;
+			height: 13px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: url(./images/yunshi.png) no-repeat bottom left;
+		}
+	</style>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var arr = [10,6,7,2,6,3,1,8,4,6,5,7];
+			var textArr = ["哈佛id好哦啊放假","dfafd","dasfadsfas","fadsf"," aw4eadasf",
+				"哈佛id好哦啊放假","dfafd","dasfadsfas","fadsf"," aw4eadasf","fadsf"," aw4eadasf"
+			];
+			function $(id) {
+				return document.getElementById(id);
+			}
+
+			function fun(yunshi) {
+				$('content').innerHTML = "爱情运爆棚的一天，今天你能够充分享受到异性的关怀，有些巨蟹甚至可能会接到表白。有伴的巨蟹不...[详细]";
+			}
+
+			$('sele').onchange = function() {
+				// alert(this.value);
+				// 索引号乘以50，更改图标
+				$('ico').style.backgroundPosition = "0 "+(-this.value * 50)+"px";
+				$('star').style.width = arr[this.value] * 8 + "px";
+				$('content').innerHTML = textArr[this.value];
+
+			};
+			
+
+		};
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div class="dt">星座运势</div>
+		<div class="dd">
+			<div class="dd-t">
+				<div class="icon" id="ico"></div>
+				<div class="right">
+					<select name="" id="sele">
+						<option value="0">
+							白羊座：03.21~04.19
+						</option>
+						<option value="1">
+							白羊座：04.21~04.19
+						</option>
+						<option value="2">
+							白羊座：04.21~04.19
+						</option>
+						<option value="3">
+							白羊座：04.21~04.19
+						</option>
+						<option value="4">
+							白羊座：04.21~04.19
+						</option>
+						<option value="5">
+							白羊座：04.21~04.19
+						</option>
+						<option value="6">
+							白羊座：04.21~04.19
+						</option>
+						<option value="7">
+							白羊座：04.21~04.19
+						</option>
+						<option value="8">
+							白羊座：04.21~04.19
+						</option>
+						<option value="9">
+							白羊座：04.21~04.19
+						</option>
+						<option value="10">
+							白羊座：04.21~04.19
+						</option>
+						<option value="11">
+							白羊座：04.21~04.19
+						</option>
+					</select>
+
+					<div>今日运势：
+						<span class="yunshi">
+							<div class="star" id='star'></div>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="dd-d" id="content">
+				家庭事务可能会让你感到忙里忙外的，现在你的状态很棒，空下来也可以给家里添置新物品，在家网购...[详细]
+			</div>
+		</div>
+	</div>
+</body>
+</html>
