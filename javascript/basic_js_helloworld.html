@@ -32,12 +32,52 @@
 		} else {
 			console.log("不及格");
 		}
+
+		var scores = parseInt(score);
+		alert(scores);
+
+		switch(scores) {
+			case 100 >= scores >= 81:
+				alert('相当好！');
+				break;
+			case 80 >= scores >= 61:
+				alert('良好');
+				break;
+			case 60:
+				alert('及格');
+				break;
+			case scores < 60:
+				alert('不及格，滚蛋！');
+				break;
+			default:
+				alert('不合理的成绩!');
+				break;
+		}
+
 		// console.log(true+16);
 		for(var i = 0; i < 10; i++) {
 			console.log(i);
 		}
 		
 		
+		console.log(10 - '2');
+
+		var j = 0;
+		var sum = 0;
+		while(j <= 100) {
+			sum += j;
+			j++;
+		}
+
+		console.log('jjjjjj'+sum);
+
+		var k = 0;
+		var sum2 = 0;
+		do {
+			sum2 += k;
+			k++;
+		} while(k <= 100);
+		console.log('kkkkkkk'+sum2);
 
 	</script>
 	

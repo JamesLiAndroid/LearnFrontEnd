@@ -238,7 +238,7 @@
                 <div class="dt">
                      <h3>生活服务</h3>
                 </div>
-                <div class="dd">
+                <div class="dd" id="imgs">
                     <ul>
                         <li class="icon-1">
                             <a href="#">
@@ -312,6 +312,14 @@
                             </a>
                         </li>
                     </ul>
+
+                    <script type="text/javascript">
+                        // 对生活服务部分更换内容图片！
+                        var imgmiss = document.getElementById('imgs').getElementsByTagName('i');
+                        for (var i = 0; i <= imgmiss.length; i++) {
+                            imgmiss[i].style.backgroundPosition = "-25px "+(-25 * i)+"px";
+                        }
+                    </script>
                 </div>
             </div>
         </div>

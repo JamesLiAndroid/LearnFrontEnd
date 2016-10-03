@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全选和反选</title>
+	<style type="text/css">
+		button {
+			margin: 10px 10px;
+		}
+
+		ul {
+			display: block;
+			list-style: none;
+		}
+	</style>
+
+	<script type="text/javascript">
+			
+		window.onload = function() {
+			var buttons = document.getElementsByTagName("button");
+			var inputs = document.getElementById('list').getElementsByTagName("input");
+			buttons[0].onclick = function() {
+
+				for (var i=0; i <= inputs.length; i++) {
+					inputs[i].checked = true;
+				}	
+			};
+
+			buttons[1].onclick = function() {
+
+				for (var i=0; i <= inputs.length; i++) {
+					inputs[i].checked = false;
+				}	
+			};
+
+
+			buttons[2].onclick = function() {
+
+				for (var i=0; i <= inputs.length; i++) {
+					inputs[i].checked = !inputs[i].checked;
+					// inputs[i] == true ? inputs[i].checked = false : inputs[i].checked = true;
+				}	
+			};
+		};
+
+
+	</script>
+</head>
+
+<body>
+
+	<button id="all-select">全选</button>
+	<button id="cancel">取消</button>
+	<button id="disselect">反选</button>
+
+	<ul id="list">
+		<li>
+		选项1：
+		<input type="checkbox"></li>
+		<li>
+		选项2：
+		<input type="checkbox"></li>
+		<li>
+		选项3：
+		<input type="checkbox"></li>
+		<li>
+		选项4：
+		<input type="checkbox"></li>
+		<li>
+		选项5：
+		<input type="checkbox"></li>
+	</ul>
+	
+</body>
+</html>

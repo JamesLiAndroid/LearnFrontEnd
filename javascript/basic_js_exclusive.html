@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>排他思想</title>
+	<style type="text/css">
+		.damao {
+			background-color: pink;
+		}		
+	</style>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var btns = document.getElementsByTagName('button');
+			for (var i = btns.length - 1; i >= 0; i--) {
+				// 设置当前元素的索引号
+				btns[i].index = i;
+
+				btns[i].onclick = function() {
+					// 弹出当前按钮的index值
+					alert(this.index);
+					// this.className = "damao";
+					// 先初始化集合中所有标签的类名
+					for (var j = btns.length - 1; j >= 0; j--) {
+						btns[j].className = "";
+					}
+					// 最后对自己赋值！
+					this.className = "damao";
+				};
+			}
+		};
+	</script>
+</head>
+<body>
+	<button>思想高度</button>
+	<button>思想高度</button>
+	<button>思想高度</button>
+	<button>思想高度</button>
+	<button>思想高度</button>
+</body>
+</html>
