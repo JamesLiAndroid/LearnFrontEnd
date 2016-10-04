@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象-日期函数</title>
+
+    <style type="text/css">
+    	.box {
+    		width: 150px;
+    		height: 150px;
+    		background-color: #369;
+    		text-align: center;
+    	}
+
+    	.box p {
+    		line-height: 30px;
+    		color: #fff;
+    		font-size: 12px;
+    	}
+
+    	.box span, .box2 p{
+    		display: block;
+    		width: 75px;
+    		height: 75px;
+    		line-height: 75px;
+    		margin: 0 auto;
+    		font-size: 50px;
+    		color: #ccc;
+    		background-color: yellowgreen;
+
+    	}
+
+    	.box2 {
+    		width: 200px;
+    		height: 200px;
+    		margin: 50px auto;
+    		line-height: 200px;
+    		background-color: pink;
+    		color: #fff;
+    	}
+
+    	#time_countdown {
+    		text-align: center;
+    		color: red;
+    	}
+    </style>
+</head>
+
+<body>
+	<div class="box" id="date">
+		<p>2015-11-13 星期五</p>
+		<span>13</span>
+	</div>
+
+	<div class="box2">
+		<p id="timer">abc</p>
+	</div>
+
+	<div class="box3">
+		倒计时：
+		<p id="time_countdown"></p>
+	</div>
+
+	<script type="text/javascript">
+		var date = new Date(); // 声明
+		console.log(date.getTime()); // 获取当前时间的毫秒数, 提倡使用的
+		console.log(date.valueOf()); // 得到距离1970年1月1日时的毫秒数
+
+		// 可直接使用的
+		console.log(Date.now());
+		console.log(+new Date());
+
+
+		var dateEle = document.getElementById('date');
+		var boys = dateEle.children;
+
+		var arr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+		// 日期函数
+		boys[0].innerHTML = date.getFullYear() + "-" + (date.getMonth()+1)+"-"+date.getDate() + " "+arr[date.getDay()];
+
+		boys[1].innerHTML = date.getDate();// 今天的日子0~31
+
+
+		var timerNext = document.getElementById('timer');
+		var num = 1;
+		function fn() {
+			num++;
+			timerNext.innerHTML = num + "";
+		}
+
+		setInterval(fn, 1000);
+
+
+		var timerCountDown = document.getElementById('time_countdown');
+		var endTime = new Date('2016/10/15 16:33:55');
+
+		setInterval(countdown, 1000);
+
+		function countdown() {
+			var nowTime = new Date();
+			// 获取时间差的秒数
+			var second = parseInt((endTime.getTime()- nowTime.getTime())/1000);
+			// console.log(second);
+			var d = parseInt(second / 3600 / 24); // 获取天数
+			var h = parseInt(second / 3600 % 24); // 获取小时数
+			var m = parseInt(second / 60 %60); // 获取分钟数
+			var s = parseInt(second % 60);
+
+			// 不满10的时候进行处理
+			d<10? d = "0"+d:d;
+			h<10? h = "0"+h:h;
+			m<10? m = "0"+m:m;
+			s<10? s = "0"+s:s;
+
+			timerCountDown.innerHTML = "抢购时间剩余："+d+"天"+h+"小时"+m+"分"+s+"秒";
+
+		}
+
+	</script>
+</body>
+
+</html>
+<!-- 
+	内置对象:
+
+Arguments
+
+函数参数集合
+
+Array
+
+数组
+
+Boolean
+
+布尔对象
+
+Date
+
+日期时间
+
+Error
+
+异常对象
+
+Function
+
+函数构造器
+
+Math
+
+数学对象
+
+Number
+
+数值对象
+
+Object
+
+基础对象
+
+RegExp
+
+正则表达式对象
+
+String
+
+字符串对象
+	
+
+	Date的对象方法:
+
+方法	描述
+Date()	返回当日的日期和时间。
+getDate()	从 Date 对象返回一个月中的某一天 (1 ~ 31)。
+getDay()	从 Date 对象返回一周中的某一天 (0 ~ 6)。
+getMonth()	从 Date 对象返回月份 (0 ~ 11)。
+getFullYear()	从 Date 对象以四位数字返回年份。
+getYear()	请使用 getFullYear() 方法代替。
+getHours()	返回 Date 对象的小时 (0 ~ 23)。
+getMinutes()	返回 Date 对象的分钟 (0 ~ 59)。
+getSeconds()	返回 Date 对象的秒数 (0 ~ 59)。
+getMilliseconds()	返回 Date 对象的毫秒(0 ~ 999)。
+getTime()	返回 1970 年 1 月 1 日至今的毫秒数。
+
+
+ -->
