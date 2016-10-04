@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dom操作</title>
+
+	<style type="text/css">
+		/* div {
+			width: 200px;
+			height: 20px;
+			background-color: pink;
+		} */
+		ul {
+			width: 400px;
+			height: 400px;
+			margin: 100px auto;
+			border: 1px solid #ccc;
+			background-color: purple;
+		}
+
+		li {
+			width: 398px;
+			height: 78px;
+			line-height: 78px;
+			border: 1px solid #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<div></div>
+		<div></div>
+	</div>
+	<div class="demo abc">
+		<div></div>
+		<div class="abc"></div>
+	</div>
+	<div class="demo">
+		<div></div>
+		<div></div>
+	</div>
+	<div class="demo abc"></div>
+	<div></div>
+	<div></div>
+
+	<button>点击添加</button>
+	<button>点击移除</button>
+	<button>点击克隆并添加</button>
+
+	<div id="demode">
+		<div id="child">woshihaizi </div>
+	</div>
+
+	<div class="parent">
+		父亲
+		<ul id="childList">
+			<li>孩子1</li>
+			<li>孩子2</li>
+			<li>孩子3</li>
+			<li>孩子4</li>
+			<li>
+				孩子5
+				<span>额外添加</span>
+			</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function(){
+			// 兼容各版本浏览器！
+			// 添加存在id的情况 
+			function domCompatible(domName, id) {
+				if (document.getElementsByClassName) {
+					if (id) {
+						var domEle = document.getElementById(id);
+						return domEle.getElementsByClassName(domName);	
+					} else {
+						return document.getElementsByClassName(domName);
+					}
+					
+				}
+
+				// 取出所有的盒子。利用遍历的方法，通过每一个盒子的className来判断，如果相等就留下！
+				var arr = [];
+				var dom = document.getElementsByTagName("*");
+
+				for(var i = 0; i < dom.length; i++) {
+					var txtArr = dom[i].className.split(" "); // 分割类名
+					for (var j = txtArr.length - 1; j >= 0; j--) {
+						if (txtArr[j].className == className) {
+							arr.push(dom[i]); // 
+						}
+						// 修改版算法，判断一个标签有多个类名的情况
+					}
+
+					// if (dom[i].className == domName) {
+					// 	arr.push(dom[i]);
+					// }
+				}
+
+				return arr;
+			}
+
+			// console.log(domCompatible("abc"));
+
+			// var text = domCompatible("abc");
+			// for (var i = text.length - 1; i >= 0; i--) {
+			// 	text[i].style.backgroundColor = "purple";
+			// }
+
+			// 对父亲、兄弟和孩子节点内容的访问
+			var childList = document.getElementById('childList');
+			var list = childList.getElementsByTagName('li');
+			// parent父节点，直系亲属
+			list[0].parentNode.style.backgroundColor = "red";
+
+			// 获取一个节点的后续兄弟节点，其中nextSibling是ie6,7,8所用
+			var brotherNext = list[0].nextElementSibling || list[0].nextSibling;
+			brotherNext.style.color = "blue";
+			// 获取一个节点的前面兄弟节点，其中previousSibling是ie6,7,8所用	
+			var brotherPre = list[1].previousElementSibling || list[0].previousSibling;
+			brotherPre.style.color = "white";
+
+			// 获取第一个子节点
+			var childFirst = childList.firstElementChild || childList.firstChild; 
+			childList.style.paddingTop = "18px";
+
+			// 获取最后一个子节点
+			var childLast = childList.lastElementChild || childList.lastChild; 
+			childLast.style.marginTop = "18px";
+
+			// 获取所有直系孩子节点的集合，不包含孩子节点内部的节点
+			// 注意ie6,7,8会包含注释节点，需要排除！
+			var allChild = childList.childNodes;
+			console.log(allChild.length);
+
+			var arrChildren = [];
+			for (var i = allChild.length - 1; i >= 0; i--) {
+				if (allChild[i].nodeType == 1) {
+					arrChildren.push(allChild[i]);
+				}
+			}
+
+			console.log(arrChildren.length);
+
+			// 节点的操作
+			var demode = document.getElementById('demode');
+			var btn = document.getElementsByTagName('button')[0];
+			btn.onclick = function() {
+				// 创建新节点
+				var newli = document.createElement('li');
+				newli.innerHTML = "文字";
+
+				// 插入节点
+				demode.appendChild(newli); // 子节点要放在父亲的最后面
+				// demode.insertBefore(newli, null); 上下两句代码意思一致
+				// demode.insertBefore(newli, arr[0]); // 将节点元素放到第一个孩子后面
+				demode.insertBefore(newli, demode);
+			};
+
+			var btnClear = document.getElementsByTagName('button')[1];
+			var childRemove = document.getElementById('child');
+			btnClear.onclick = function() {
+				// 移除子节点
+				demode.removeChild(childRemove);
+			};
+
+			var btnClone = document.getElementsByTagName('button')[2];
+			//var childRemove = document.getElementById('child');
+			btnClone.onclick = function() {
+				// 添加克隆的子节点
+				demode.appendChild(demode.cloneNode());
+				demode.parentNode.appendChild(demode.cloneNode());
+			};
+
+
+
+		};
+	</script>
+</body>
+</html>
+
+<!-- 
+
+	DOM:让js能够操作html元素
+
+	条件语句来判断五大数据类型中的真假：
+
+	1. 数字类型： 0-假，其他所有数字都是真
+	2. 字符串： ‘’-假，所有字符串都是真
+	3. 对象： null-假，所有对象都是真
+	4. 未定义： undefined是假，没有真
+
+ -->
