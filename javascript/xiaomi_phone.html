@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>仿小米手机展示效果</title>
+    <style type="text/css">
+    .xiaomi {
+        width: 512px;
+        height: 512px;
+        border: 1px solid #f00;
+        margin: 100px auto;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .xiaomi span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 256px;
+        cursor: pointer;
+    }
+    
+    .xiaomi .up {
+        /* background-color: blue; */
+        top: 0;
+    }
+    
+    .xiaomi .down {
+        /* background-color: purple; */
+        bottom: 0;
+    }
+    
+    #pic {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="xiaomi">
+        <img src="./images/mi.png" alt="" id="pic" />
+        <span class="up" id="picUp"></span>
+        <span class="down" id="picDown"></span>
+    </div>
+    <script type="text/javascript">
+    window.onload = function() {
+    	clearInterval(timer1);
+        function $(id) {
+            return document.getElementById(id);
+        }
+        var num = 0;
+        var timer1 = null;
+        var timer2 = null;
+        $('picUp').onmouseover = function() {
+            timer1 = setInterval(funcScroll, 30);
+
+            function funcScroll() {
+                num -= 3;
+                $('pic').style.top = num + 'px';
+                if (num <= -905) {
+                	clearInterval(timer1);
+                	return;
+                }
+            }
+        };
+
+        $('picUp').onmouseout = function() {
+        	clearInterval(timer1);
+        }
+
+        $('picDown').onmouseover = function() {
+            timer2 = setInterval(funcScrolls, 30);
+
+            function funcScrolls() {
+                num += 3;
+                $('pic').style.top = num + 'px';
+                if (num >= 0) {
+                	clearInterval(timer2);
+                	return;
+                }
+            }
+        };
+
+
+        $('picDown').onmouseout = function() {
+        	clearInterval(timer2);
+        }
+
+
+
+    };
+    </script>
+</body>
+
+</html>

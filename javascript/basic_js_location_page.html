@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>5秒钟以后自动跳转页面</title>
+</head>
+
+<body>
+    <div id="divbox">
+    </div>
+    <script type="text/javascript">
+    window.onload = function() {
+        var boxs = document.getElementById('divbox');
+        var count = 5;
+        // 用setTimeOut函数来模拟setInterval函数的功能
+        setTimeout(goIndexPage, 1000); // 1s之后去执行goInexPage函数
+
+        function goIndexPage() {
+            count--;
+            if (count < 0) {
+                // 如果count小于0，时间到，就去跳转页面
+                // js页面跳转代码
+                window.location.href = "http://www.baidu.com";
+            } else {
+            	boxs.innerHTML = "<a href='http://www.baidu.com'>本页面将在" + count + "s后跳转页面</a>";
+            	//arguments对象中有一个非常有用的属性：callee。arguments.callee返回此arguments对象所在的当前函数引用。在使用函数递归调用时推荐使用arguments.callee代替函数名本身。
+                setTimeout(arguments.callee, 1000); // 递归调用
+            }
+        }
+    };
+    </script>
+</body>
+
+</html>
+
+<!-- 
+	setInterval(fn, 5000) // 每隔5秒去执行一次
+	setTimeout(fn,5000);  // 5秒钟之后去执行fn函数，只执行一次
+	
+	1. arguments对象中有一个非常有用的属性：callee。arguments.callee返回此arguments对象所在的当前函数引用。在使用函数递归调用时推荐使用arguments.callee代替函数名本身。
+
+	4. setInterval是排队执行的，延迟时间为1s ， 要执行的代码需要两秒来执行，上一次没有执行完的代码会继续执行，而下一次要执行的代码就会进行排队，那么这样实际的执行时间变为了2s
+
+	setTimeout延迟时间为1s执行，要执行的代码要2s来执行
+	那么这段代码的上一次与下一次的执行时间间隔为3s
+
+	
+	 -->

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>短信验证码</title>
+</head>
+<body>
+	<input type="text" />
+	<button id="btn">点击发送短信</button>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			var btn = document.getElementById('btn');
+			var count = 10;
+			var timer = null; // 定时器的名称
+
+			btn.onclick = function() {
+				clearInterval(timer); // 开始之前先清除定时器
+				this.disabled = true;
+
+				timer = setInterval(sendTextMessage, 1000);
+				// 
+				function sendTextMessage() {
+					count--;
+
+					if (count <= 0) {
+						//this.disabled = false;
+						btn.disabled = false;
+
+						//this.innerHTML = "点击发送短信";
+						btn.innerHTML = "点击发送短信";
+						count = 10;
+						clearInterval(timer); // 停止定时器！
+						return;
+					}
+					// this.innerHTML = "剩余"+count+"秒"; 
+					// this在这里并不代表btn，而是函数被调用的位置
+					// 可以： var that = this;将btn传入函数中
+					btn.innerHTML = "剩余"+count+"秒";
+				}
+			};
+		};
+
+	</script>
+</body>
+</html>
+
+<!-- 
+	
+	button -不能点击- 
+	btn.disabled = "disabled" || btn.disabled = true;
+
+	注意：
+	1. 因为button是个双标签，所以更改他的文本内容，使用innerHTML，而不是value；
+	input是单标签，所以使用value获取其值
+
+	2.this指向的是事件的调用者，或者是函数的调用者！
+	3.clearInterval(定时器名称); // 停止定时器！
+
+	4. setInterval是排队执行的，延迟时间为1s ， 要执行的代码需要两秒来执行，上一次没有执行完的代码会继续执行，而下一次要执行的代码就会进行排队，那么这样实际的执行时间变为了2s
+
+	setTimeout延迟时间为1s执行，要执行的代码要2s来执行
+	那么这段代码的上一次与下一次的执行时间间隔为3s
+
+ -->
