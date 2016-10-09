@@ -1,85 +1,86 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
 </head>
+
 <body>
+    <script type="text/javascript">
+    alert("Hello　World");
 
-	<script type="text/javascript">
-		alert("Hello　World");
-		function getAdd(a,b) {
-			return a+b;
-		}
-		console.log(getAdd(10,100));
+    function getAdd(a, b) {
+        return a + b;
+    }
+    console.log(getAdd(10, 100));
 
-		var a = 100;
-		var b = "棒子这个傻逼！";
-		console.log(a);
-		console.log(typeof a);
-		console.log(b);
-		console.log(typeof b);
-		// 命名规范
-		// 只能由英语字母，数字，下划线，美元符号$构成，且不能以数字开头
-		
-		// 用户输入
-		var propt = prompt("请输入相关信息：");
-		console.log(propt);
+    var a = 100;
+    var b = "棒子这个傻逼！";
+    console.log(a);
+    console.log(typeof a);
+    console.log(b);
+    console.log(typeof b);
+    // 命名规范
+    // 只能由英语字母，数字，下划线，美元符号$构成，且不能以数字开头
 
-		var score = prompt("请输入成绩");
-		if (score > 60) {
-			console.log("及格");
-		} else {
-			console.log("不及格");
-		}
+    // 用户输入
+    var propt = prompt("请输入相关信息：");
+    console.log(propt);
 
-		var scores = parseInt(score);
-		alert(scores);
+    var score = prompt("请输入成绩");
+    if (score > 60) {
+        console.log("及格");
+    } else {
+        console.log("不及格");
+    }
 
-		switch(scores) {
-			case 100 >= scores >= 81:
-				alert('相当好！');
-				break;
-			case 80 >= scores >= 61:
-				alert('良好');
-				break;
-			case 60:
-				alert('及格');
-				break;
-			case scores < 60:
-				alert('不及格，滚蛋！');
-				break;
-			default:
-				alert('不合理的成绩!');
-				break;
-		}
+    var scores = parseInt(score);
+    alert(scores);
 
-		// console.log(true+16);
-		for(var i = 0; i < 10; i++) {
-			console.log(i);
-		}
-		
-		
-		console.log(10 - '2');
+    switch (scores) {
+        case 100 >= scores >= 81:
+            alert('相当好！');
+            break;
+        case 80 >= scores >= 61:
+            alert('良好');
+            break;
+        case 60:
+            alert('及格');
+            break;
+        case scores < 60:
+            alert('不及格，滚蛋！');
+            break;
+        default:
+            alert('不合理的成绩!');
+            break;
+    }
 
-		var j = 0;
-		var sum = 0;
-		while(j <= 100) {
-			sum += j;
-			j++;
-		}
+    // console.log(true+16);
+    for (var i = 0; i < 10; i++) {
+        console.log(i);
+    }
 
-		console.log('jjjjjj'+sum);
 
-		var k = 0;
-		var sum2 = 0;
-		do {
-			sum2 += k;
-			k++;
-		} while(k <= 100);
-		console.log('kkkkkkk'+sum2);
+    console.log(10 - '2');
 
-	</script>
-	
+    var j = 0;
+    var sum = 0;
+    while (j <= 100) {
+        sum += j;
+        j++;
+    }
+
+    console.log('jjjjjj' + sum);
+
+    var k = 0;
+    var sum2 = 0;
+    do {
+        sum2 += k;
+        k++;
+    } while (k <= 100);
+    console.log('kkkkkkk' + sum2);
+    </script>
 </body>
+
 </html>

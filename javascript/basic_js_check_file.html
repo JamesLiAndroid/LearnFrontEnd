@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>检查文件格式</title>
+</head>
+<body>
+
+	<input type="file" name="File" id="file_send" /> <span></span> <!-- 文件域 -->
+	
+	<script type="text/javascript">
+		var file = document.getElementById("file_send");
+		file.onchange = function() {
+			var path = this.value;
+			var afterName = path.substr(path.indexOf(".")).toUpperCase();
+			if (afterName == ".PNG" || afterName == ".JPG") {
+				this.nextSibling.innerHTML = "文件格式正确";
+				this.nextElementSibling.innerHTML = "文件格式正确";
+				alert("文件格式正确");
+			} else {
+				this.nextElementSibling.innerHTML = "文件格式错误";
+				this.nextElementSibling.innerHTML = "文件格式错误";
+				alert("文件格式错误");
+			}
+		}
+	</script>
+</body>
+</html>
