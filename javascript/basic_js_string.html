@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 字符串操作
+		// 转换为字符串
+		var txt = 12345;
+		console.log(typeof(txt + ''));
+		console.log(typeof String(txt));
+		console.log(txt.toString(2)); // 将数字转换成二进制数后转换成String并显示
+
+		// 获取字符串位置方法-- 根据字符位置返回字符
+		var string = 'abcdefg';
+		console.log(string.charAt(3)); // 获取第几个位置的字符，默认索引号为0，从0开始
+		console.log(string.charCodeAt(1)); // 获取第几个位的字符的对应的ASCii码表的位置，最大索引不能超过127
+
+		var text = "what are you 弄啥咧";
+		console.log(text.length);
+		// 获取字符长度的函数
+		function getStringLength(str) {
+			var len = 0;
+			var c = 0;
+			for(var i = 0; i < str.length; i++) {
+				c = str.charCodeAt(i);
+				console.log(c);
+
+				if (c>=0 && c<=127) {
+					len++;
+				} else {
+					len += 2;
+				}
+			}
+
+			return len;
+		}
+
+		getStringLength(text);
+
+		// 根据字符返回位置
+		var txti = "abcdefd";
+		console.warn(txti.indexOf('d')); // 从前面（左边）开始数，*只找*第一个，然后返回该字符的位置
+								// 如果找不到字符，会返回-1
+		console.warn(txti.lastIndexOf('d')); // 从后面（右边）开始数，其他同上,但是返回值还是正向（从左边）计数的时候获取的
+
+		// 链接的编码和解码
+		var url = "thhp://www.baidu.com?name= lsy";
+		console.log(encodeURIComponent(url));
+
+		var urlEn = "https://pan.baidu.com/play/video#video/path=%2F%E4%BC%A0%E6%99%BA%E5%89%8D%E7%AB%AF%2F04%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E6%9C%AC%E5%8A%9F%2F10-%E5%89%8D%E7%AB%AF%E5%9F%BA%E6%9C%AC%E5%8A%9F-js%E7%AC%AC%E4%B8%83%E5%A4%A9%2F%E8%A7%86%E9%A2%91%2F03%20%E7%BD%91%E5%9D%80%E7%9A%84%E7%BC%96%E7%A0%81%E5%92%8C%E8%A7%A3%E7%A0%81.web.mp4&t=2";
+		console.log(decodeURIComponent(urlEn));
+
+	</script>
+</body>
+</html>

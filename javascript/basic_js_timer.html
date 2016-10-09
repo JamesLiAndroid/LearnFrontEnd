@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器面试</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var num = 30;
+		function changeNum() {
+			num = 40;
+			console.log('函数内执行:'+num); // 这个语句最后打印
+		}
+
+		setTimeout(changeNum,0); // 当所有代码执行完成之后才会执行给定的函数
+		console.log('函数之前执行：'+num);
+		num = 50;
+
+		console.log('函数外执行:'+num);
+
+
+	</script>
+	
+</body>
+</html>

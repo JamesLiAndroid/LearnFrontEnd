@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作字符串</title>
+</head>
+<body>
+	<div id="div1">my name is andy!</div>
+	<div id="div2">what's your name?</div>
+	<button id="btn1">concat()</button>
+	<span> </span><br/>
+
+	<button id="btn2">slice(3)</button>
+	<span> </span><br/>
+
+	<button id="btn3">slice(3,6)</button>
+	<span> </span><br/>
+
+	<button id="btn4">slice(-1)</button>
+	<span> </span><br/>
+
+	<button id="btn5">substr(3)</button>
+	<span> </span><br/>
+
+	<button id="btn6">substr(3,6)</button>
+	<span> </span><br/>
+
+	<button id="btn7">substr(-1)兼容</button>
+	<span> </span><br/>
+
+	<button id="btn8">保留小数点后两位</button>
+	<span> </span><br/>
+
+
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var div1 = document.getElementById('div1').innerHTML;
+			var div2 = document.getElementById('div2').innerHTML;
+
+			function onBtnClick(id, txt) {
+				document.getElementById(id).onclick = function() {
+					this.nextSibling.innerHTML = txt;
+					this.nextElementSibling.innerHTML = txt;
+				};
+			}
+
+			onBtnClick('btn1',div1.concat(div2));  // 连接字符串
+			onBtnClick('btn2',div1.slice(3)); // 截取所获得的字符串，必须指定开始的位置,最终位置可选
+						// 截取从起始位置到最终位置的字符串（不包含最终位置），最终位置不指定，则会截取到最后
+			onBtnClick('btn3',div1.slice(3,6));
+			onBtnClick('btn4',div1.slice(-1));// 起始位置负数，则是从右往左开始取
+			onBtnClick('btn5',div1.substr(3)); // 从开始位置截取到最后的字符串，如果有第二个参数（取的个数），则是从开始位置向后取多少个字符 
+			onBtnClick('btn6',div1.substr(3,6)); 
+			onBtnClick('btn7',div1.substr(div1.length - 1,1)); // 从后向前取字符的兼容方法
+		};
+	</script>
+	
+</body>
+</html>
