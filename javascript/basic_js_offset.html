@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Offset家族</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.box {
+			width: 500px;
+			height: 500px;
+			background-color: pink;
+			border: 5px solid #ccc;
+			padding: 100px; 
+			font-size: 22px;
+			/* 父元素有定位 */
+			position: relative; 
+		}
+		
+		#son {
+			width: 200px;
+			height: 200px;
+			background-color: purple;
+			padding: 10px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="demo" class="box">
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsafa
+		dsfdafadsasdfadsfdasffdsafdasdfsafad
+		adsasdfadsfdasffdsafdasdfsafadsfdafa
+		dsasdfadsfdasffdsafdasdfsafadsfdafad
+		sasdfadsfdasffdsafdasdfsasfdafadfsff
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+		fadsfdafadsasdfadsfdasffdsafdasdfsa
+
+		<div id="son" >
+			
+		</div>
+
+	</div>
+	
+	<script type="text/javascript">
+		window.onload = function() {
+			var demo = document.getElementById("demo");
+			console.log(demo.style.width); // 仅仅可以获取行内式定义的widthfiles
+			console.warn("demo_OffsetWidth::"+demo.offsetWidth); // 行内定义的同样有效
+			console.warn("demo_OffsetHeight::"+demo.offsetHeight);
+
+			console.log("Son offsetLeft:："+demo.offsetLeft); 
+			console.log("Son offsetTop:："+demo.offsetTop); 
+
+		};
+	</script>
+</body>
+</html>
+
+<!-- 
+	offsetWidth = width + border + padding;
+    offsetHeight
+    得到对象的宽度和高度（自己的，和别的元素无关）
+
+    offsetLeft offsetTop
+    返回距离上级盒子（带有定位）左边的位置
+
+    如果父亲没有定位则以body为准（注意：这里的父亲指得是所有上一级）；
+    从父亲的padding开始算，父亲的border不算
+
+    就是子盒子到定位的父盒子边框到边框的距离
+ -->
