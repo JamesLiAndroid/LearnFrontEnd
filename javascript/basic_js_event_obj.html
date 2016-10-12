@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		window.onload = function() {
+			document.onclick = function(event) {
+
+				var obj = event || window.event;
+				console.log(obj.clientX+"::"+obj.clientY);
+			};
+		};
+
+
+	</script>
+	
+</body>
+</html>

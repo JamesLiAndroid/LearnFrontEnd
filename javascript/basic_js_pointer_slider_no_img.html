@@ -10,8 +10,8 @@
             display: block;  /* 清除图片底册 3像素缝隙*/
         }
         .slider {
-            width: 490px;
-            height: 170px;
+            width: 300px;
+            height: 200px;
             border:1px solid #ccc;
             margin: 100px auto;
             padding:5px;
@@ -22,7 +22,7 @@
             height: 100%;
             background-color: pink;
             position: relative;
-            /*overflow: hidden*/
+            overflow: hidden;
         }
         .inner ul {
             width: 1000%;
@@ -63,7 +63,7 @@
             <li><a href="#"><img src="images/02.jpg" alt=""/></a></li>
             <li><a href="#"><img src="images/03.jpg" alt=""/></a></li>
             <li><a href="#"><img src="images/04.jpg" alt=""/></a></li>
-            <li><a href="#"><img src="images/05.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/01.jpg" alt=""/></a></li>
         </ul>
     </div>
     <ol>
@@ -91,7 +91,7 @@
                 olLis[j].className = "";
             }
             this.className = "current";
-            target = -this.index * 490; // 目标位置 就是用当前的索引号乘以  一个盒子的宽度
+            target = -this.index * 300; // 目标位置 就是用当前的索引号乘以  一个盒子的宽度
         }
     }
     setInterval(function() {

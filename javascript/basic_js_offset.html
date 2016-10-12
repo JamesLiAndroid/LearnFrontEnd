@@ -26,6 +26,17 @@
 			padding: 10px;
 		}
 
+		.sonson {
+			width: 50px;
+			height: 50px;
+			background-color: #ccc;
+			z-index: -5;
+			padding: 10px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
 
 	</style>
 </head>
@@ -51,6 +62,7 @@
 		fadsfdafadsasdfadsfdasffdsafdasdfsa
 
 		<div id="son" >
+			<div class="sonson"></div>
 			
 		</div>
 
@@ -59,12 +71,19 @@
 	<script type="text/javascript">
 		window.onload = function() {
 			var demo = document.getElementById("demo");
+			var son = document.getElementById("son");
+			var sonson = document.getElementById("sonson");
+
 			console.log(demo.style.width); // 仅仅可以获取行内式定义的widthfiles
 			console.warn("demo_OffsetWidth::"+demo.offsetWidth); // 行内定义的同样有效
 			console.warn("demo_OffsetHeight::"+demo.offsetHeight);
 
 			console.log("Son offsetLeft:："+demo.offsetLeft); 
 			console.log("Son offsetTop:："+demo.offsetTop); 
+
+			console.log("demo`:"+demo.offsetParent.tagName);
+			console.log("son:"+son.offsetParent.tagName);
+			console.log("soson:"+sonson.offsetParent.tagName); // TODO:Error
 
 		};
 	</script>
@@ -83,4 +102,34 @@
     从父亲的padding开始算，父亲的border不算
 
     就是子盒子到定位的父盒子边框到边框的距离
+
+    offsetParent:返回该对象的父级元素（由定位决定）。与parentNode不同
+
+    如果当前元素没有进行CSS定位（position为relative或者absolute），offsetParent为body。
+    如果当前元素进行了定位，offsetParent取最近的父级元素。
+
+
+    1.2.3 offsetParent  
+返回改对象的父级 （带有定位） 不一定是亲的爸爸 
+前面学过一个返回父亲(亲的)    parentNode   有所区别
+
+如果当前元素的父级元素没有进行CSS定位（position为absolute或relative），offsetParent为body。
+2、如果当前元素的父级元素中有CSS定位（position为absolute或relative），offsetParent取最近的那个父级元素。
+
+var son = document.getElementById("son");
+//alert(son.parentNode.id);
+alert(son.offsetParent.tagName);  // tagName标签的名字  
+
+1.2.4 offsetTop style.top 的区别
+一、最大区别在于  offsetLeft  可以返回没有定位盒子的距离左侧的位置。 而 style.top 不可以  只有定位的盒子 才有 left  top right  
+
+
+二、offsetTop 返回的是数字，而 style.top 返回的是字符串，除了数字外还带有单位：px。
+ style.left = 300px      parseInt（300px）    结果  300
+parseInt（style.left） + parseInt（style.left）  
+三、offsetTop 只读，而 style.top 可读写。
+
+4、 如果没有给 HTML 元素指定过 top 样式，则 style.top 返回的是空字符串。
+5、 最重要的区别  style.left 只能得到 行内样式     offsetLeft 随便
+
  -->

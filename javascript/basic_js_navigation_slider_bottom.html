@@ -3,8 +3,102 @@
 <head>
 	<meta charset="UTF-8">
 	<title>导航栏筋斗云效果</title>
+
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		body {
+			background-color: #000;
+		}
+		.nav {
+			width: 800px;
+			height: 42px;
+			background:url("images/rss.png") no-repeat right center #fff;
+			margin: 100px auto;
+			border-radius: 5px;
+			position: relative;
+		}
+		
+		.cloud {
+			width: 83px;
+			height: 42px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: url("images/cloud.gif") no-repeat;
+			/* z-index: 1;  // 不能使用这个*/
+		}
+
+		.nav ul {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		
+		.nav ul li {
+			width: 83px;
+			height: 42px;
+			line-height: 42px;
+			text-align: center;
+			color: #000;
+			float: left;	
+			cursor: pointer;
+		}
+
+	</style>
 </head>
 <body>
-	
+	<div class="nav" id="nav">
+		<span class="cloud" id="cloud"></span>
+		<ul>
+			<li>首页新闻</li>
+			<li>师资力量</li>
+			<li>活动策划</li>
+			<li>企业文化</li>
+			<li>招聘信息</li>
+			<li>公司简介</li>
+			<li>上海校区</li>
+			<li>广州校区</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var cloud = document.getElementById("cloud");
+			var nav = document.getElementById("nav");
+			var lis = nav.children[1].children;
+
+			var current = 0;
+			for (var i = lis.length - 1; i >= 0; i--) {
+				lis[i].onmouseover = function() {
+					target = this.offsetLeft;
+				};
+
+				lis[i].onmouseout = function() {
+					target = current;
+				};
+
+				lis[i].onclick = function() {
+					current = this.offsetLeft;
+				};
+			}
+
+
+			// 缓动公式
+			var leader = 0, target = 0;
+			setInterval(function(){
+				leader = leader + (target - leader) / 10;
+				cloud.style.left = leader + "px";
+			},30);
+
+		};
+	</script>
 </body>
 </html>
