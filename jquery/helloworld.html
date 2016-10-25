@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery开始</title>
+
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+</head>
+<body>
+    <button id="b1" class="btn btn-default">显示</button>
+    <button id="b2" class="btn btn-default">隐藏</button>
+
+    <br>
+    <br>
+
+    <div id="d">
+        这是一个div
+    </div>
+
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <script>
+//        这是为了防止文档在完全加载（就绪）之前运行 jQuery 代码。
+//        换句话说，写在这里面的JQuery代码都是文档加载好之后的。
+//        就不会有获取一个还没有加载好的图片这种问题了。
+        $(function () {
+            $('#b1').click(function () {
+                $('#d').hide();
+            });
+            $('#b2').click(function () {
+                $('#d').show();
+            });
+        });
+//        另一种写法
+        $(document).ready(function () {
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+    <style>
+        .pink {
+            background-color: pink;
+        }
+        .blue {
+            background-color: blue;
+        }
+
+        .blue-sky {
+            background-color: #2aabd2;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<button id="b1" class="btn btn-default">给所有div元素添加背景色</button>
+<button id="b2" class="btn btn-info active">给指定id的div元素添加背景色</button>
+<button id="b3" class="btn btn-warning">给指定class的div元素添加背景色</button>
+<button id="b4" class="btn btn-danger btn-lg">通过层级来添加背景色</button>
+<button id="b5" class="btn active btn-lg">通过first,last来添加背景色</button>
+<button id="b6" class="btn btn-group-justified">通过first,last来添加背景色</button>
+<button id="b7" class="btn btn-link">通过visible添加背景色</button>
+<button id="b8" class="btn btn-link">通过hidden来添加背景色</button>
+<button id="b9" class="btn btn-group-xs">this当前元素隐藏</button>
+
+
+
+
+<br>
+<br>
+
+<div id="d1">最前面的元素</div>
+<div id="d2" class="divider">Hello Jquery</div>
+<div id="d3">Hello Jquery
+    <span class="blue-sky">修改颜色</span>
+</div>
+
+<div id="d4">Hello Jquery</div>
+<div id="d5">最后面的元素</div>
+
+<div id="d6" >Hello Jquery</div>
+<div id="d7">最后面的元素</div>
+
+<div class="vis">
+    <div id="d8">显示的元素</div>
+    <div id="d9" style="display: none;">隐藏的元素</div>
+    <div id="d10">显示的元素</div>
+    <div id="d11" style="display: none;">隐藏的元素</div>
+</div>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $('#b1').click(function () {
+           $('div').addClass('pink');
+        });
+
+        $('#b2').click(function () {
+            $('#d1').toggleClass('blue');
+        });
+
+        $('#b3').click(function () {
+            $('.divider').css({'background-color':'red'});
+        });
+
+        $('#b4').click(function () {
+            $('#d3 span').removeClass("blue-sky");
+        });
+
+        $('#b5').click(function () {
+           $('div:first').css('font-size','33px');
+            $('div:last').css('font-size','22px');
+        });
+
+        $('#b6').click(function () {
+            $('div:odd').css('color','cyan');
+            $('div:even').css('color','gray');
+        });
+
+        $('#b7').click(function () {
+            $('.vis div:visible').hide();
+            //$('.vis div:hidden').visible();
+        });
+        $('#b8').click(function () {
+            //$('.vis div:visible').hide();
+            $('.vis div:hidden').show();
+        });
+        $('#b9').click(function () {
+            //$('.vis div:visible').hide();
+            $(this).hide();
+        });
+
+
+    });
+</script>
+</body>
+</html>

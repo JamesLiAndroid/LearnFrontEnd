@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>取值函数</title>
+
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+</head>
+<body>
+<button id="getValue" class="btn btn-default">取值</button>
+<button id="htmlContent" class="btn btn-default col-lg-push-3">获取元素内容,如果有子元素，保留标签
+</button>
+
+<button id="text" class="btn btn-default col-lg-push-3">获取元素内容,如果有子元素，移除子元素标签
+</button>
+<br>
+<br>
+
+<input type="text" id="input1" value="1111">
+
+<div id="d1">
+    这是div的内容
+    <span>这是div里的span
+</span>
+</div>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script>
+
+    $(function () {
+       $('#getValue').click(function () {
+           alert($('#input1').val()); // val()取值
+       });
+
+        $(function () {
+            $('#htmlContent').click(function () {
+               alert($('#d1').html()); // html() 获取元素内容,如果有子元素，保留标签
+            });
+        });
+
+        $(function () {
+            $('#text').click(function () {
+                alert($('#d1').text()); // text() 获取元素内容,如果有子元素，不保留标签
+            });
+        });
+    });
+</script>
+</body>
+</html>

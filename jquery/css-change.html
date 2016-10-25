@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操纵css</title>
+
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+    <style>
+        .pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+<button id="addClass" class="btn btn-success">
+    增加背景色
+</button>
+
+<button id="removeClass" class="btn active">
+    移除背景色
+</button>
+
+<button id="toggleClass" class="btn btn-warning">
+    切换背景色
+    <!--<label for=""></label>-->
+</button>
+<span class="label label-info col-lg-3">切换的意思在于：如果存在就删除; 如果不存在，就添加.</span>
+
+
+<button id="css-setting" class="btn btn-info">
+    直接使用css函数设置属性
+    <!--<label for=""></label>-->
+</button>
+<br>
+<br>
+
+<div id="abc">
+    我是增加背景色的位置
+</div>
+
+
+
+<script src="./js/jquery.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $("#addClass").click(function () {
+            $('#abc').addClass("pink"); // 添加css类
+        });
+
+        $("#removeClass").click(function () {
+            $('#abc').removeClass("pink"); // 移除css类
+        });
+
+        $("#toggleClass").click(function () {
+            $('#abc').toggleClass("pink"); // 切换css类：如果存在就删除; 如果不存在，就添加.
+        });
+
+        $("#css-setting").click(function () {
+            $('#abc').css({"background-color":"pink", "font-size":"2em"}); // 通过css函数设置
+            $('#css-setting').addClass("disabled");
+        });
+
+
+
+    });
+</script>
+</body>
+</html>

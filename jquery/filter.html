@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>筛选器</title>
+
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+    <style>
+        .pink {
+            background-color: pink;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        div{
+            padding:20px;
+        }
+
+        div#grandParentDiv{
+            background-color:pink;
+        }
+
+        div#parentDiv{
+            background-color:green;
+        }
+
+        div#currentDiv{
+            background-color:red;
+        }
+
+        div#child1{
+            background-color:pink;
+        }
+
+        div#child2{
+            background-color:green;
+        }
+
+
+        .b{
+            border: 2px solid black;
+        }
+
+    </style>
+</head>
+<body>
+
+<button id="b1">切换第1个div背景色</button>
+<button id="b2">切换最后1个div背景色</button>
+<button id="b3">切换第5个div背景色</button>
+<button id="b4">改变parent()的边框</button>
+<button id="b5">改变parents()的边框</button>
+<button id="b6">改变children()的边框</button>
+<button id="b7">改变find()的边框</button>
+<button id="b8">改变sibling()的边框</button>
+
+
+<div>
+    <span>Hello JQuery 1</span>
+
+</div>
+
+<div >
+    <span>Hello JQuery 2</span>
+</div>
+
+<div >
+    <span>Hello JQuery 3</span>
+</div>
+
+<div >
+    <span>Hello JQuery 4</span>
+</div>
+
+</div>
+
+<div >
+    <span>Hello JQuery 5</span>
+</div>
+
+<div >
+    <span>Hello JQuery 6</span>
+</div>
+
+<div id="grandParentDiv" >
+    祖先元素
+    <div id="parentDiv">
+        父元素
+        <div id="currentDiv">当前元素
+            <div id="child1">儿子1</div>
+            <div id="child2">儿子2</div>
+
+        </div>
+        <div id="currentDiv1">同级元素
+
+
+        </div>
+        <div id="currentDiv2">同级元素
+
+        </div>
+    </div>
+</div>
+
+
+<script src="./js/jquery.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $('#b1').click(function () {
+            $('div').first().toggleClass('pink');
+        });
+
+        $('#b2').click(function () {
+            $('div').last().toggleClass('blue');
+        });
+
+        $('#b3').click(function () {
+            $('div').eq(4).toggleClass('blue');
+        });
+
+        $('#b4').click(function () {
+            $('#grandParentDiv div').parent().toggleClass('b');
+        });
+
+        $('#b5').click(function () {
+            $('#grandParentDiv div').parents().toggleClass('b');
+        });
+
+        $('#b6').click(function () {
+            $('#grandParentDiv div').children().toggleClass('b');
+        });
+
+        $('#b7').click(function () {
+            $('#grandParentDiv div').find("div").toggleClass('b');
+        });
+        $('#b8').click(function () {
+            $('#grandParentDiv div').siblings().toggleClass('b');
+        });
+    });
+</script>
+</body>
+</html>
