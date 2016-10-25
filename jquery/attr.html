@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jquery属性</title>
+    <link href="./css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <button id="b1">获取align属性</button>
+    <button id="b2">获取自定义属性game</button>
+    <button id="b3">修改align属性为right</button>
+    <button id="b4">删除align属性</button>
+    
+    <br />
+    <br />
+    
+    <h1 id="h" align="center" game="LOL">居中标题</h1>
+    
+    <button id="b5">通过attr获取自定义属性 game</button>
+    <button id="b6">通过prop获取自定义属性 game</button>
+    <button id="b7">通过attr获取 checked属性</button>
+    <button id="b8">通过prop获取 checked属性</button>
+    <br>
+    <br>
+    <input type="checkbox" id="c" game="LOL" checked="checked"> 选中的复选框
+    
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    
+    <script>
+    $(function() {
+        $('#b1').click(function() {
+            alert("align的属性是：" + $("#h").attr("align"));
+        });
+
+        $('#b2').click(function() {
+            alert("game的属性是：" + $("#h").attr("game"));
+        });
+
+        $('#b3').click(function() {
+            $("#h").attr("align", "right");
+        });
+
+        $('#b4').click(function() {
+            $("#h").removeAttr('align');
+        });
+
+        // 与prop一样attr也可以用来获取与设置元素的属性。
+        // 区别在于，对于自定义属性和选中属性的处理。
+        // 选中属性指的是 checked,selected 这2种属性
+        // 1. 对于自定义属性 attr能够获取，prop不能获取
+        // 2. 对于选中属性
+        //  attr 只能获取初始值， 无论是否变化
+        //  prop 能够访问变化后的值，并且以true|false的布尔型返回。
+        $('#b5').click(function() {
+        	alert("game的属性是：" + $("#c").attr("game"));
+            //$("#c").attr('game');
+        });
+
+        $('#b6').click(function() {
+        	alert("game的属性是：" + $("#c").prop("game"));
+        });
+
+        $('#b7').click(function() {
+        	// 只能获取初始的属性，无法应对变化
+        	alert("game的属性是：" + $("#c").attr("checked"));
+        });
+
+        $('#b8').click(function() {
+        	alert("game的属性是：" + $("#c").prop("checked"));
+        });
+
+    });
+    </script>
+</body>
+
+</html>

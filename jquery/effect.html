@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jquery效果</title>
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+    div {
+        border: solid 1px gray;
+        background-color: pink;
+        width: 300px;
+        height: 100px;
+        margin-top: 100px;
+        position: relative;
+    }
+    </style>
+</head>
+
+<body>
+    <button id="b1">延时显示</button>
+    <button id="b2">延时隐藏</button>
+    <button id="b3">延时切换</button>
+
+	<br>
+
+    <button id="b4">向上滑动</button>
+    <button id="b5">向下滑动</button>
+    <button id="b6">滑动切换</button>
+    
+    <br>
+
+    <button id="b7">淡入</button>
+    <button id="b8">淡出</button>
+    <button id="b9">淡入淡出切换</button>
+    <button id="b10">指定淡入程度</button>
+    
+    <br>
+
+	<button id="b11">自定义动画</button>
+    <br>
+    <br>
+    <div id="d">用于演示效果的div</div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+    	$(function() {
+    		$("#b1").click(function(){
+    			$("#d").show(200);
+    		});
+    	});
+
+    	$(function() {
+    		$("#b2").click(function(){
+    			$("#d").hide(300);
+    		});
+    	});
+
+
+    	$(function() {
+    		$("#b3").click(function(){
+    			$("#d").toggle(400);
+    		});
+    	});
+
+    	$(function() {
+    		$("#b4").click(function(){
+    			$("#d").slideUp(200);
+    		});
+    	});
+
+    	$(function() {
+    		$("#b5").click(function(){
+    			$("#d").slideDown(300);
+    		});
+    	});
+
+
+    	$(function() {
+    		$("#b6").click(function(){
+    			$("#d").slideToggle(400);
+    		});
+    	});
+
+    	$(function() {
+    		$("#b7").click(function(){
+    			$("#d").fadeIn(200);
+    		});
+    	});
+
+    	$(function() {
+    		$("#b8").click(function(){
+    			$("#d").fadeOut(300);
+    		});
+    	});
+
+
+    	$(function() {
+    		$("#b9").click(function(){
+    			$("#d").fadeToggle(400);
+    		});
+    	});
+
+    	$(function() {
+    		$("#b10").click(function(){
+    			$("#d").fadeTo("slow",1.2);
+    		});
+    	});
+
+    	//  默认情况下，html中的元素都是固定，并且无法改变的位置的。 为了使用animate()自定义动画效果，需要通过css把元素的position设置为relative、absolute或者fixed。
+    	$(function() {
+    		$("#b11").click(function(){
+    			$("#d").animate({
+    				left: '100px',
+    				color: 'red'},
+    				500);
+
+    			$("#d").animate({
+    				left: '0px',
+    				top:'50px',
+    				height:'50px',
+    				color: 'black'},
+    				2500,function() {
+    					alert("动画结束");
+    				});
+    		});
+    	});
+    </script>
+</body>
+
+</html>
