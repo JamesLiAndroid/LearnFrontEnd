@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery数组操作</title>
+
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+</head>
+<body>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script>
+    // 数组遍历
+    var a = new Array(2,3,4,5);
+    $.each(a, function (i, n) {
+        document.write("元素【"+i+"】"+n+"<br>");
+    });
+
+    // 去重
+    //执行unique之前，要先调用sort对数组的内容进行排序。
+    var b = [5,23,4,5,6,78,9,8,9,67,3,9,4,9,5,6];
+    b.sort();
+    $.unique(b);
+    $.each(b, function (i, n) {
+        document.write("去重【"+i+"】"+n+"<br>");
+    });
+
+    //返回元素在数组中的位置 ，如果不存在返回-1
+    document.write("存在】" + $.inArray(9,b) + "<br>");
+
+    var str = "   Hwllo wwww dfafd dd fare       ";
+    document.write($.trim(str));
+
+    document.write("<br>");
+
+    // Json解析
+    var s1 = "{\"name\":\"盖伦\"";
+    var s2 = ",\"hp\":616}";
+    var s3 = s1+s2;
+
+    document.write("这是个json字符串："+s3);
+    document.write("<br>");
+    var obj = $.parseJSON(s3);
+    document.write("这是个json对象："+obj);
+
+    document.close();
+</script>
+</body>
+</html>
