@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React组件</title>
+	<!-- React包。需要提前导入 -->
+    <script src="https://cdn.bootcss.com/react/15.3.2/react.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.3.2/react-dom.js"></script>
+    <!-- Babel编译器，将JSX变为js -->
+    <script src="https://cdn.bootcss.com/babel-core/5.8.23/browser.js"></script>
+    <style type="text/css">
+    	#btn-set button {
+			border: 2px solid #fc0;
+			font-size: 20px;
+			color: #fc0;
+			background-color: #fff;
+    	}
+    </style>
+</head>
+<body>
+	<div id="container"></div>
+	<div id="lsy"></div>
+	<div id="btn-set"></div>
+
+	<script type="text/babel">
+		var HelloWorld = React.createClass({
+			render: function() {
+				return(
+					<p>你好，组件化的世界</p>
+				);
+			}
+		});
+
+		var Lsy = React.createClass({
+			render: function() {
+				return(
+				 	<p>{this.props.greetTarget}</p>
+				);
+			}
+		});
+
+		var Btn = React.createClass({
+			render: function() {
+				return (
+					<div>
+						<button type={this.props.behavior}>{this.props.children}</button>
+					</div>
+				);
+			}
+
+		});
+		
+		ReactDOM.render(
+			<div>
+				<HelloWorld />
+				<HelloWorld/>
+				<HelloWorld/>
+				<HelloWorld/>
+
+			</div>,
+			document.querySelector("#container")
+		);
+
+		ReactDOM.render(
+			<div>
+				<Lsy greetTarget="小李"/>
+				<Lsy greetTarget="小张"/>
+				<Lsy greetTarget="小王"/>
+			</div>,
+			document.querySelector("#lsy")
+		);
+
+		ReactDOM.render(
+			<div>
+				<Btn behavior="submit">SEND DATA</Btn>		
+			</div>,
+			document.querySelector("#btn-set")
+		);
+	</script>
+	
+</body>
+</html>

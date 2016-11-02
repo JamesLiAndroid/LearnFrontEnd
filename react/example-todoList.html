@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TodoList</title>
+    <!-- React包。需要提前导入 -->
+    <script src="https://cdn.bootcss.com/react/15.3.2/react.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.3.2/react-dom.js"></script>
+    <!-- Babel编译器，将JSX变为js -->
+    <script src="https://cdn.bootcss.com/babel-core/5.8.23/browser.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/babel-core/6.1.19/browser.js"></script> -->
+    <style type="text/css">
+        #container {
+            padding: 50px;
+            /*background-color: #EEE;*/
+        }
+        body {
+            padding: 50px;
+            background-color: #66CCFF;
+            font-family: sans-serif;
+        }
+        .todoListMain .header input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #FFF;
+        }
+        .todoListMain .header button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: #0066FF;
+            color: #FFF;
+            border: 2px solid #0066FF;
+        }
+
+        .todoListMain .header button:hover {
+            background-color: #003399;
+            border: 2px solid #003399;
+            cursor: pointer;
+        }
+
+        .todoListMain .theList {
+            list-style: none;
+            padding-left: 0;
+            width: 255px;
+        }
+
+        .todoListMain .theList li {
+            color: #333;
+            background-color: rgba(255,255,255,.5);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="container"></div>
+<script type="text/babel">
+
+    var TodoItems = React.createClass({
+        render: function () {
+            var todoEntries = this.props.entries;
+
+            function createTasks(item) {
+                return <li key={item.key}>{item.text}</li>
+            }
+
+            var listItems = todoEntries.map(createTasks);
+
+            return (
+                    <ul className="theList">
+                        {listItems}
+                    </ul>
+            );
+        }
+    });
+
+    var TodoList = React.createClass({
+        getInitialState: function () {
+            return {
+                items: []
+            };
+        },
+        addItem: function (e) {
+            var itemArray = this.state.items;
+            itemArray.push(
+                    {
+                        text:this._inputElement.value,
+                        key:Date.now()
+                    }
+            );
+
+            this.setState({
+                items: itemArray
+            });
+
+            this._inputElement.value = "";
+            {/*preventDefault 方法确保不会传播 onSubmit 事件超过此界限。我们这样做的原因有点难以理解，但是它确保：提交表单时所有想要做的是调用 addItem 方法。
+            如果不中止事件传播，我们的应用将会在提交表单时会根据需要正确调用 addItem。它还会触发浏览器的默认 POST 行为 - 这显然是我们不想要的。
+            通过阻止 onSubmit 事件跑到此界限以外，我们就得到了我们想要的行为，即调用 addItem 方法，而没有不想要的副作用，比如不需要的会刷新页面的 POST 动作。*/}
+            e.preventDefault();
+        },
+        render: function() {
+            return (
+                <div className="todoListMain">
+                    <div className="header">
+                        <form onSubmit={this.addItem}>
+                            {/* 用你在文本框中输入的文本填充这个数组 , 类似dom的引用标签
+                                在这个地方，ref引用的内容中，实际等价于下面这个函数：
+                                function (a) {
+                                    self._inputElement = a;
+                                }
+
+                                这里实际上是使用的ES6箭头来简化了函数
+                            */}
+                            <input placeholder="Enter Task" ref={(a) => this._inputElement = a}/>
+                            <button type="submit">Add</button>
+                        </form>
+                    </div>
+                    <TodoItems entries={this.state.items}/>
+                </div>
+            );
+        }
+    });
+
+
+    ReactDOM.render(
+            <TodoList />,
+            document.querySelector('#container')
+    );
+</script>
+</body>
+
+</html>

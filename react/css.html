@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React添加样式</title>
+	
+	<script src="https://cdn.bootcss.com/react/15.3.2/react.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.3.2/react-dom.js"></script>
+    <!-- Babel编译器，将JSX变为js -->
+    <script src="https://cdn.bootcss.com/babel-core/5.8.23/browser.js"></script>
+
+	<!-- <style type="text/css">
+		.letter {
+			padding: 10px;
+			margin: 10px;
+			background-color: #fc0;
+			color: #333;
+			display: inline-block;
+			font-size: 32px;
+			text-align: center;
+		}
+	</style> -->
+</head>
+<body>
+	<div id="container"></div>
+	<script type="text/babel">
+		var Letter = React.createClass({
+			render: function() {
+				// 将style标签中的css内容翻译成JSX内容 
+				// 下面演示指定不同的背景颜色 
+				var letterStyle = {
+					padding:10,
+					margin:10,
+					backgroundColor: this.props.bgcolor,
+					color:"#333",
+					display:"inline-block",
+					fontSize:"32",
+					textAlign:"center"
+				};
+				return (
+					// 设置行内样式
+					<div style={letterStyle}>
+						{this.props.children}
+					</div>
+				);
+			}
+		});
+
+		var destination = document.querySelector("#container");
+		ReactDOM.render(
+			<div>
+				<Letter bgcolor="#58B3FF">A</Letter>
+				<Letter bgcolor="#FF605F">E</Letter>
+				<Letter bgcolor="#FFD52E">I</Letter>
+				<Letter bgcolor="#49DD8E">O</Letter>
+				<Letter bgcolor="#AE99FF">U</Letter>
+			</div>,
+			destination
+		);
+			
+
+	</script>
+</body>
+</html>
+
+<!-- <div className="letter">
+						{this.props.children}
+					</div> -->

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>React传递属性</title>
+    <!-- React包。需要提前导入 -->
+    <script src="https://cdn.bootcss.com/react/15.3.2/react.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.3.2/react-dom.js"></script>
+    <!-- Babel编译器，将JSX变为js -->
+    <script src="https://cdn.bootcss.com/babel-core/5.8.23/browser.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/babel-core/6.1.19/browser.js"></script> -->
+    <style type="text/css">
+    #container {
+        padding: 50px;
+        background-color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        //厂商前缀属性，首字母必须大写
+        var Square = React.createClass({
+                    render: function() {
+                        return(
+                                <div>
+                                    <p>{this.props.color}</p>
+                                    <p>{this.props.number}</p>
+                                    <p>{this.props.styleSheet}</p>
+                                </div>
+                        );
+                    }
+                });
+
+        var Label = React.createClass({
+                    render: function() {
+                        return (
+                               <Square {...this.props}/>
+                        );
+                    }
+                });
+
+        var Card = React.createClass({
+                    render: function() {
+                            return (
+                                <Label {...this.props}/>
+                            );
+
+                    }
+                });
+
+        // 这样导致属性值层层传递
+        ReactDOM.render(
+            <div>
+                <Card color="#fff444" number="7.18" styleSheet="abcb"/>
+            </div>,
+            document.querySelector('#container')
+        );
+    </script>
+</body>
+
+</html>
+
+
+<!--
+JSX注意事项：
+1.只能返回一个根节点，结合createElement 的机制理解
+
+2.不能指定inline css，通过引用一个包含样式信息的对象来实现
+
+3.保留关键字:
+break, case, class, catch, const, continue, debugger, default, delete, do, else, export, extends, finally, for, function, if, import, in, instanceof, new, return, super, switch, this, throw, try, typeof, var, void, while, with, yield。
+
+DOM中的class使用className来替代
+
+4.注释：{/* I am a child comment */} 确保它被解析为一个表达式
+
+5.大小写、HTML 元素和组件：
+HTML元素必须是小写字母，组件名称必须是大写字母
+
+6.JSX 可以出现在任何地方
+
+
+
+-->

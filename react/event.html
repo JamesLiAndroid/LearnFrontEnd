@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React事件</title>
+    <!-- React包。需要提前导入 -->
+    <script src="https://cdn.bootcss.com/react/15.3.2/react.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.3.2/react-dom.js"></script>
+    <!-- Babel编译器，将JSX变为js -->
+    <script src="https://cdn.bootcss.com/babel-core/5.8.23/browser.js"></script>
+
+    <style>
+        #container {
+            padding: 50px;
+            background-color: #FFF;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        var destination = document.querySelector("#container");
+
+        var Counter =  React.createClass({
+
+            render: function () {
+                var textStyle = {
+                    fontSize:72,
+                    fontFamily:"sans-serif",
+                    color:"#333",
+                    fontWeight:"bold"
+                };
+
+                return (
+                        <div style={textStyle}>
+                            {this.props.display}
+                        </div>
+                );
+            }
+        });
+
+        var PlusButton = React.createClass({
+            render: function () {
+                var buttonStyle = {
+                    fontSize:"16px",
+                    width:30,
+                    height:30,
+                    fontFamily:"sans-serif",
+                    color:"#333",
+                    fontWeight:"bold",
+                    lineHeight:"3px"
+                };
+
+                return (
+                        {/* 将事件处理器当作是一个 prop，并将它传递给组件 */}
+                        <button style={buttonStyle} onClick={this.props.clickHandler}>
+                            +
+                        </button>
+                );
+            }
+        });
+
+
+        var CounterParent = React.createClass({
+            getInitialState: function () {
+                return {
+                    count: 0
+                };
+            },
+
+            increase: function (e) {
+
+                //console.log(this); // CounterParent组件
+                // increase 事件处理器中 this 的值为 CounterParent 组件，而不是触发该事件的元素
+                var currentCount = this.state.count;
+                if (e.shiftKey) {
+                    currentCount += 10;
+                } else {
+                    currentCount +=1;
+                }
+                this.setState({
+                    count: currentCount
+                });
+            },
+
+            render: function() {
+                var backgroundStyle = {
+                    padding:50,
+                    backgroundColor: "#FFC534",
+                    width:250,
+                    height:100,
+                    borderRadius:10,
+                    textAlign:"center"
+                };
+
+                return (
+                    <div style={backgroundStyle}>
+                        <Counter display={this.state.count}/>
+                        {/* ES6 的类来定义组件，那么事件处理器中 this 的值就是 undefined，除非你自己显式绑定它 */}
+                        <PlusButton clickHandler={this.increase.bind(this)}/>
+                        {/*<button style={buttonStyle} onClick={this.increase}>+</button>*/}
+                        {/* onClick在元素中设置点击事件 */}
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <div>
+                <CounterParent/>
+            </div>,
+                destination
+        );
+    </script>
+</body>
+</html>
+
+<!--
+    1.监听常规dom事件
+
+    var Something = React.createClass({
+  handleMyEvent: function(e) {
+    // do something
+  },
+  componentDidMount: function() {
+    window.addEventListener("someEvent", this.handleMyEvent);
+  },
+  componentWillUnmount: function() {
+    window.removeEventListener("someEvent", this.handleMyEvent);
+  },
+  render: function() {
+      return (
+        <div>Hello!</div>
+      );
+    }
+    });
+
+    2.在 React 世界中（即组件是用 React.createClass 创建的），事件处理器中的 this 引用的总是事件处理器所处的组件
+
+ -->
